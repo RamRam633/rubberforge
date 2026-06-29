@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg: #f6f7f9;
+}
+
+* {
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+html,
+body {
+  background-color: var(--bg);
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  /* Factory Control Room: warm industrial off-white with a very subtle steel
+     blueprint grid and soft cool light. Never washed out, never purple. */
+  background-image:
+    radial-gradient(1100px 700px at 86% -10%, rgba(37, 99, 235, 0.05), transparent 60%),
+    radial-gradient(900px 600px at 4% 2%, rgba(8, 145, 178, 0.04), transparent 56%),
+    linear-gradient(rgba(15, 23, 42, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.028) 1px, transparent 1px),
+    linear-gradient(180deg, #f7f8fa 0%, #eef1f4 100%);
+  background-size:
+    auto,
+    auto,
+    32px 32px,
+    32px 32px,
+    auto;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.012em;
+}
+
+/* Visible keyboard focus */
+*:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.4);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(71, 85, 105, 0.6);
+  background-clip: padding-box;
+}
+
+@layer components {
+  /* White factory-software surface */
+  .panel {
+    @apply relative rounded-xl border border-line bg-white;
+    box-shadow:
+      0 1px 2px 0 rgba(16, 24, 40, 0.05),
+      0 12px 32px -22px rgba(16, 24, 40, 0.16);
+  }
+  .panel-tight {
+    @apply rounded-lg border border-line bg-base-900;
+  }
+  .panel-raised {
+    @apply relative rounded-2xl border border-line bg-white;
+    box-shadow:
+      0 1px 2px 0 rgba(16, 24, 40, 0.06),
+      0 18px 44px -26px rgba(16, 24, 40, 0.2);
+  }
+
+  .label-mono {
+    @apply font-mono text-[10px] uppercase tracking-[0.2em] text-ink-faint;
+  }
+  .kicker {
+    @apply font-mono text-[11px] uppercase tracking-[0.24em] text-blue-600;
+  }
+  .kicker-violet {
+    @apply font-mono text-[11px] uppercase tracking-[0.24em] text-blue-600;
+  }
+
+  /* Primary action: VayuAI blue */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg
+      bg-blue-500 px-4 py-2.5 font-medium text-white shadow-glow-blue transition
+      hover:bg-blue-600
+      disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none
+      disabled:bg-base-500 disabled:text-ink-faint;
+  }
+  /* Manufacturing-active action: amber with dark text */
+  .btn-amber {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg
+      bg-gradient-to-b from-molten-400 to-molten-500 px-4 py-2.5
+      font-medium text-white shadow-glow transition
+      hover:from-molten-500 hover:to-molten-600
+      disabled:cursor-not-allowed disabled:opacity-40 disabled:shadow-none
+      disabled:from-base-500 disabled:to-base-500 disabled:text-ink-faint;
+  }
+  /* Secondary: white with steel border */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-line
+      bg-white px-3.5 py-2 text-sm text-ink-muted transition
+      hover:border-line-strong hover:bg-base-850 hover:text-ink disabled:opacity-40;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line
+      bg-base-850 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-ink-muted;
+  }
+
+  .rf-input {
+    @apply w-full rounded-lg border border-line bg-white px-3 py-2 text-sm text-ink
+      placeholder:text-ink-faint focus:border-blue-400 focus:outline-none;
+  }
+
+  .grid-surface {
+    background-image:
+      linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  /* Interactive card: white surface that lifts on hover */
+  .interactive-card {
+    @apply rounded-xl border border-line bg-white transition duration-200 hover:-translate-y-0.5 hover:border-line-strong;
+  }
+  .interactive-card:hover {
+    box-shadow:
+      0 1px 2px 0 rgba(16, 24, 40, 0.06),
+      0 16px 36px -22px rgba(16, 24, 40, 0.22);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glow-text {
+    text-shadow: none;
+  }
+  .glow-text-violet {
+    text-shadow: none;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-500 via-blue-600 to-blue-400 bg-clip-text text-transparent;
+  }
+  .stage-glow {
+    box-shadow:
+      0 1px 2px 0 rgba(16, 24, 40, 0.06),
+      0 24px 60px -34px rgba(16, 24, 40, 0.28);
+  }
+  .sheen {
+    background-image: linear-gradient(
+      105deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.08) 45%,
+      rgba(255, 255, 255, 0.16) 50%,
+      rgba(255, 255, 255, 0.08) 55%,
+      transparent 70%
+    );
+    background-size: 280% 100%;
+    animation: sheen-slide 4.5s linear infinite;
+  }
+  @keyframes sheen-slide {
+    to {
+      background-position: -280% 0;
+    }
+  }
+}
