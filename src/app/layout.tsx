@@ -76,7 +76,7 @@ export default function RootLayout({
         <UserModeProvider>
           <RunProvider>
             <SiteNav />
-            <main className="relative min-h-[calc(100vh-3.5rem)]">{children}</main>
+            <main className="relative min-h-[calc(100dvh-3.5rem)]">{children}</main>
             <Footer />
           </RunProvider>
         </UserModeProvider>

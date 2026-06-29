@@ -40,7 +40,7 @@ export function SupplierControlPanel() {
         <p className="mt-1.5 text-[12.5px] text-ink-muted"><span className="text-ink-faint">Supplies. </span>{active.suppliedItem}</p>
 
         <div className="mt-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-          <Block icon={FileCheck2} title="Required documents" items={active.requiredDocuments} accent="#5d75f0" />
+          <Block icon={FileCheck2} title="Required documents" items={active.requiredDocuments} accent="#2563eb" />
           <Block icon={ClipboardCheck} title="Receiving checks" items={active.receivingChecks} accent="#22c55e" />
           <Block icon={AlertTriangle} title="Quality risks" items={active.qualityRisks} accent="#f59e0b" />
           <div className="rounded-lg border border-line bg-base-850/40 px-3 py-2">

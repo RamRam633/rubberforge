@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useScrollLock } from "@/lib/useScrollLock";
 import { labEquipment } from "@/lib/labEquipment";
 import type { LabEquipment as LabEquip, LabEquipCategory } from "@/types/qaLab";
 import { LabQMSBadge } from "@/components/qms/QMSBadge";
@@ -8,10 +9,10 @@ import { FlaskConical, Wrench, Gauge, Thermometer, Ruler, FileText, X, Microscop
 
 const CAT: Record<LabEquipCategory, { label: string; accent: string; Icon: LucideIcon }> = {
   "rheology-cure": { label: "Rheology / cure", accent: "#f59e0b", Icon: FlaskConical },
-  mechanical: { label: "Mechanical", accent: "#5d75f0", Icon: Wrench },
+  mechanical: { label: "Mechanical", accent: "#2563eb", Icon: Wrench },
   physical: { label: "Physical", accent: "#22c55e", Icon: Gauge },
   environmental: { label: "Environmental", accent: "#ea8d04", Icon: Thermometer },
-  dimensional: { label: "Dimensional", accent: "#8b7fff", Icon: Ruler },
+  dimensional: { label: "Dimensional", accent: "#7c3aed", Icon: Ruler },
   documentation: { label: "Documentation", accent: "#94a3b8", Icon: FileText },
 };
 const ORDER: LabEquipCategory[] = ["rheology-cure", "mechanical", "physical", "environmental", "dimensional", "documentation"];
@@ -108,6 +109,7 @@ function ChipField({ label, items }: { label: string; items: string[] }) {
 export function LabEquipmentLibrary() {
   const [cat, setCat] = useState<LabEquipCategory | "all">("all");
   const [open, setOpen] = useState<LabEquip | null>(null);
+  useScrollLock(open !== null);
   const list = labEquipment.filter((e) => cat === "all" || e.category === cat);
   return (
     <div>

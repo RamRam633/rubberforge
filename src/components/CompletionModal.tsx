@@ -7,6 +7,7 @@ import { materialStateOrder, materialStates } from "@/lib/materialData";
 import { processSteps } from "@/lib/processData";
 import { defects } from "@/lib/defectData";
 import { useFactoryRun } from "@/components/run/RunProvider";
+import { useScrollLock } from "@/lib/useScrollLock";
 import { RotateCcw, Search, CircleCheck, X, FlaskConical, FileOutput, FileText } from "lucide-react";
 
 const KEY_TAKEAWAYS = [
@@ -26,6 +27,7 @@ export function CompletionModal({
   onClose: () => void;
 }) {
   const { startRun, setStage } = useFactoryRun();
+  useScrollLock(true);
   function sendToLab() {
     startRun("rubber-sheet", "epdm");
     setStage("qa");

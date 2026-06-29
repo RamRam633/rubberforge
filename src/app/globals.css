@@ -11,6 +11,14 @@
   border-color: rgba(15, 23, 42, 0.12);
 }
 
+html {
+  /* Prevent any horizontal drift and the iOS rubber-band that reads as the
+     page "moving by itself" on a phone. */
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+  -webkit-text-size-adjust: 100%;
+}
+
 html,
 body {
   background-color: var(--bg);
@@ -20,10 +28,25 @@ body {
 }
 
 body {
+  /* dvh tracks the dynamic viewport so the layout does not jump when the mobile
+     address bar shows/hides. 100vh kept as a fallback for old engines. */
   min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
   line-height: 1.5;
-  /* Factory Control Room: warm industrial off-white with a very subtle steel
-     blueprint grid and soft cool light. Never washed out, never purple. */
+  position: relative;
+}
+
+/* Factory Control Room: warm industrial off-white with a very subtle steel
+   blueprint grid and soft cool light. Painted on a fixed layer behind content
+   instead of `background-attachment: fixed`, which jitters badly on iOS Safari. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--bg);
   background-image:
     radial-gradient(1100px 700px at 86% -10%, rgba(37, 99, 235, 0.05), transparent 60%),
     radial-gradient(900px 600px at 4% 2%, rgba(8, 145, 178, 0.04), transparent 56%),
@@ -36,13 +59,20 @@ body {
     32px 32px,
     32px 32px,
     auto;
-  background-attachment: fixed;
 }
 
 h1,
 h2,
 h3 {
   letter-spacing: -0.012em;
+}
+
+/* Every <canvas> here is an R3F 3D viewport. `pan-y` lets the page scroll
+   vertically over the 3D on touch devices (no scroll hijacking) while still
+   allowing horizontal orbit and pinch-zoom. `!important` overrides the
+   `touch-action: auto` R3F writes inline on the canvas element. */
+canvas {
+  touch-action: pan-y !important;
 }
 
 /* Visible keyboard focus */
@@ -161,8 +191,15 @@ h3 {
   .glow-text-violet {
     text-shadow: none;
   }
+  /* VayuAI family signature: a multi-hue brand gradient on highlighted words,
+     echoing the hub's gradient-quantum but blue-led so RubberForge stays
+     factory-brand blue and never purple-heavy. */
   .text-gradient {
-    @apply bg-gradient-to-r from-blue-500 via-blue-600 to-blue-400 bg-clip-text text-transparent;
+    background-image: linear-gradient(100deg, #2563eb 0%, #0891b2 52%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
   }
   .stage-glow {
     box-shadow:

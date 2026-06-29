@@ -1,19 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import { useScrollLock } from "@/lib/useScrollLock";
 import { qmsProcessMap } from "@/lib/qmsProcessMap";
 import { clauseShort } from "@/lib/qmsUi";
 import type { ProcessGroup, QmsProcess } from "@/types/qms";
 import { Workflow, ArrowRight, User, X } from "lucide-react";
 
 const GROUPS: { id: ProcessGroup; label: string; desc: string; accent: string }[] = [
-  { id: "core", label: "Core processes", desc: "Customer requirement to delivery", accent: "#f59e0b" },
-  { id: "support", label: "Support processes", desc: "Document control, calibration, audit, CAPA", accent: "#5d75f0" },
-  { id: "management", label: "Management processes", desc: "Policy, objectives, risk, context", accent: "#8b7fff" },
+  { id: "core", label: "Core processes", desc: "Customer requirement to delivery", accent: "#d97706" },
+  { id: "support", label: "Support processes", desc: "Document control, calibration, audit, CAPA", accent: "#2563eb" },
+  { id: "management", label: "Management processes", desc: "Policy, objectives, risk, context", accent: "#7c3aed" },
 ];
 
 export function QMSProcessMap() {
   const [sel, setSel] = useState<QmsProcess | null>(null);
+  useScrollLock(sel !== null);
 
   return (
     <div>

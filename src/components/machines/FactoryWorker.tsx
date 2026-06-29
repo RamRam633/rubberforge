@@ -9,7 +9,7 @@ type Vec3 = [number, number, number];
 
 const VEST_HEX: Record<VestColor, string> = {
   amber: "#e2a629",
-  blue: "#5d75f0",
+  blue: "#2563eb",
   green: "#37b24d",
   orange: "#e8730c",
   violet: "#7a6cf0",

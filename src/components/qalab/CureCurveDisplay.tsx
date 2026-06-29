@@ -66,7 +66,7 @@ export function CureCurveDisplay({ runKey = 0 }: { runKey?: number }) {
         {/* marker dots */}
         {mdrCurveMarkers.map((m) => {
           const pt = mdrCurvePoints.reduce((a, b) => (Math.abs(b.t - m.x) < Math.abs(a.t - m.x) ? b : a));
-          return <circle key={m.id} cx={px(pt.t)} cy={py(pt.v)} r="3.2" fill="#fbbf24" stroke="#11102b" strokeWidth="1.5" />;
+          return <circle key={m.id} cx={px(pt.t)} cy={py(pt.v)} r="3.2" fill="#fbbf24" stroke="#111827" strokeWidth="1.5" />;
         })}
       </svg>
       <div className="mt-1 flex flex-wrap gap-1.5 px-1">

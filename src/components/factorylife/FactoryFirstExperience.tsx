@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useScrollLock } from "@/lib/useScrollLock";
 import { FIRST_EXPERIENCE_OPTIONS } from "@/lib/factoryNarrative";
 import type { FirstExperienceOption } from "@/types/factoryPlatform";
 import { AnimatePresence, motion } from "framer-motion";
@@ -25,6 +26,7 @@ const KEY = "rf-entered-factory";
 export function FactoryFirstExperience() {
   const [open, setOpen] = useState(false);
   const [ready, setReady] = useState(false);
+  useScrollLock(open);
 
   useEffect(() => {
     setReady(true);

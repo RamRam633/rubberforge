@@ -48,7 +48,7 @@ export function FactoryHeroVisual({ className = "" }: { className?: string }) {
           {Array.from({ length: 9 }).map((_, i) => (
             <circle key={`bead${i}`} cx={44 + i * 49} cy="80" r="3.2" fill="#ffffff" stroke="#7c3aed" strokeWidth="1.3" />
           ))}
-          <path d="M44 100 Q 96 112 148 100 T 252 100 T 356 100 T 436 100" fill="none" stroke="#a78bfa" strokeWidth="1" opacity="0.7" />
+          <path d="M44 100 Q 96 112 148 100 T 252 100 T 356 100 T 436 100" fill="none" stroke="#7c3aed" strokeWidth="1" opacity="0.7" />
           {[142, 240, 338].map((x, i) => (
             <line key={`xl${i}`} x1={x} y1="80" x2={x} y2="100" stroke="#d97706" strokeWidth="1.8">
               <animate attributeName="opacity" values="0.3;1;0.3" dur="2.6s" begin={`${i * 0.5}s`} repeatCount="indefinite" />

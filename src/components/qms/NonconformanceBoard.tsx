@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useScrollLock } from "@/lib/useScrollLock";
 import { nonconformanceData } from "@/lib/nonconformanceData";
 import { capaWorkflow } from "@/lib/capaWorkflow";
 import { clauseShort, statusClass } from "@/lib/qmsUi";
@@ -34,6 +35,7 @@ export function CAPAWorkflowPanel() {
 
 export function NonconformanceBoard() {
   const [sel, setSel] = useState<(typeof nonconformanceData)[number] | null>(null);
+  useScrollLock(sel !== null);
   const counts = nonconformanceData.reduce<Record<string, number>>((a, n) => { a[n.status] = (a[n.status] || 0) + 1; return a; }, {});
 
   return (

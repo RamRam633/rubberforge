@@ -64,7 +64,7 @@ export function TensileTestSimulator() {
     <SimShell
       title="Tensile / Elongation (UTM)"
       Icon={Maximize2}
-      accent="#5d75f0"
+      accent="#2563eb"
       onRun={() => setRun((r) => r + 1)}
       badges={["controlled record", "calibration required", "traceable sample"]}
       result={

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { X } from "lucide-react";
+import { useScrollLock } from "@/lib/useScrollLock";
 import type { FilterTag, MaterialKind } from "@/types/platform";
 import {
   materialFamilies,
@@ -47,6 +48,7 @@ export default function MaterialsPage() {
   }, [query, kind, activeTags]);
 
   const selected = selectedId ? materialFamiliesById[selectedId] : null;
+  useScrollLock(selected !== null);
 
   return (
     <div className="mx-auto max-w-[1300px] px-5 pb-12 pt-8">

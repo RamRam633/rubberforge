@@ -54,7 +54,7 @@ function Instrument({ zoneId, position, active, onSelect, children, label }: { z
         {(active || hover) && (
           <mesh position={[0, -0.02, 0]}>
             <ringGeometry args={[0.85, 0.95, 32]} />
-            <meshBasicMaterial color={active ? "#8b7fff" : "#5d75f0"} side={THREE.DoubleSide} transparent opacity={0.8} />
+            <meshBasicMaterial color={active ? "#7c3aed" : "#2563eb"} side={THREE.DoubleSide} transparent opacity={0.8} />
           </mesh>
         )}
       </group>
@@ -105,7 +105,7 @@ function Scene({ active, onSelect }: { active: string | null; onSelect: (id: str
         {/* lane stripe */}
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.01, 0.15]}>
           <planeGeometry args={[18, 0.12]} />
-          <meshBasicMaterial color="#5d75f0" transparent opacity={0.35} />
+          <meshBasicMaterial color="#2563eb" transparent opacity={0.35} />
         </mesh>
         {STATIONS.map((s) => (
           <Instrument key={s.id} zoneId={s.id} position={s.pos} active={active === s.id} onSelect={onSelect} label={labStationsById[s.id]?.signText ?? s.id}>

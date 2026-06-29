@@ -6,8 +6,8 @@ export function ContextInterestedPartiesPanel() {
   return (
     <div className="flex flex-col gap-4">
       <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
-        <ListCard icon={Building2} title="Internal issues" items={ctx.internalIssues} accent="#8b7fff" />
-        <ListCard icon={Globe2} title="External issues" items={ctx.externalIssues} accent="#5d75f0" />
+        <ListCard icon={Building2} title="Internal issues" items={ctx.internalIssues} accent="#7c3aed" />
+        <ListCard icon={Globe2} title="External issues" items={ctx.externalIssues} accent="#2563eb" />
         <div className="panel p-4">
           <span className="flex items-center gap-1.5 label-mono text-[10px] text-pass"><Users className="h-3 w-3" /> Interested parties</span>
           <ul className="mt-2 space-y-1.5">

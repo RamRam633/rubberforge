@@ -25,6 +25,7 @@ import { ProcessLog } from "./ProcessLog";
 import { QuizCard } from "./QuizCard";
 import { CompletionModal } from "./CompletionModal";
 import { canEditBatch } from "@/lib/simulationState";
+import { useScrollLock } from "@/lib/useScrollLock";
 import type { FactoryLayerId } from "@/types/factoryPlatform";
 import { ArrowRight, Loader2, RotateCcw, Layers, ListChecks, FlaskConical, Search, ShieldCheck, GraduationCap } from "lucide-react";
 
@@ -51,6 +52,7 @@ export function Simulator() {
   const atWeighingIncomplete = state.activeIndex === WEIGHING_INDEX && !isBatchComplete(state.batch);
   const isComplete = state.phase === "complete";
   const showCompletion = isComplete && !state.activeQuizId && !completionClosed;
+  useScrollLock(activeQuiz !== null);
 
   const actionLabel = isComplete
     ? "View Completion Summary"
@@ -170,7 +172,7 @@ export function Simulator() {
         </div>
 
         {/* Right: layer-aware station inspector */}
-        <div className="min-h-[520px] lg:h-[calc(100vh-180px)] lg:min-h-0">
+        <div className="min-h-[520px] lg:h-[calc(100dvh-180px)] lg:min-h-0">
           {layer === "process" ? (
             <LearningPanel step={step} transforming={state.transforming} />
           ) : layer === "qms" ? (

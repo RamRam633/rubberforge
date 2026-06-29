@@ -182,7 +182,7 @@ export function SiteNav() {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="max-h-[calc(100vh-3.5rem)] overflow-y-auto border-t border-line bg-white px-4 py-2 xl:hidden">
+        <div className="max-h-[calc(100dvh-3.5rem)] overflow-y-auto overscroll-contain border-t border-line bg-white px-4 py-2 xl:hidden">
           {[...PRIMARY, ...TRAILING].map((l) => (
             <MobileLink key={l.href} href={l.href} label={l.label} active={isActive(l.href)} onClick={() => setOpen(false)} />
           ))}

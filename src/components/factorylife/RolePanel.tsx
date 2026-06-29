@@ -4,10 +4,10 @@ import { Eye, FileText, ShieldCheck, FileSignature, HardHat } from "lucide-react
 
 export const VEST_SWATCH: Record<VestColor, string> = {
   amber: "#f59e0b",
-  blue: "#5d75f0",
+  blue: "#2563eb",
   green: "#22c55e",
   orange: "#ea8d04",
-  violet: "#6757f5",
+  violet: "#7c3aed",
   steel: "#94a3b8",
 };
 

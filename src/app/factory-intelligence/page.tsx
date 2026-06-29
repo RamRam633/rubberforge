@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useScrollLock } from "@/lib/useScrollLock";
 import { X, Boxes, Beaker, Gauge, Plug, Route, Network, Building2, ArrowRight, ShieldCheck } from "lucide-react";
 
 import { equipmentLibrary, equipmentById } from "@/lib/equipmentLibrary";
@@ -33,6 +34,7 @@ export default function FactoryIntelligencePage() {
   const [selectedCat, setSelectedCat] = useState<string>("all");
   const [selectedEquipmentId, setSelectedEquipmentId] = useState<string | null>(null);
   const [selectedIngredientId, setSelectedIngredientId] = useState<string | null>(null);
+  useScrollLock(selectedEquipmentId !== null || selectedIngredientId !== null);
 
   const filteredEquipment =
     selectedCat === "all"

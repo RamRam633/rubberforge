@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useScrollLock } from "@/lib/useScrollLock";
 import { aiAgents } from "@/lib/aiAgents";
 import { orgFunctions } from "@/lib/orgFunctions";
 import { raciModel } from "@/lib/raciModel";
@@ -23,6 +24,7 @@ function layerLabel(l: OmLayer): string {
 
 export function AiOperatingModel() {
   const [sel, setSel] = useState<AiAgent | null>(null);
+  useScrollLock(sel !== null);
 
   return (
     <div className="flex flex-col gap-6">
