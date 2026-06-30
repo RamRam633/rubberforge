@@ -74,7 +74,7 @@ export function QALab() {
             click an instrument · drag to orbit
           </div>
         </div>
-        <div key={zone ?? "none"} className="qa-scan-pulse panel overflow-hidden p-4">
+        <div key={zone ?? "none"} className="qa-scan-pulse panel min-h-[300px] overflow-hidden p-4 lg:min-h-0">
           {z ? (
             <>
               <span className="inline-block rounded border border-line bg-base-950/50 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-violet-300">{z.signText}</span>
@@ -105,7 +105,7 @@ export function QALab() {
           const Icon = m.Icon;
           return (
             <button key={m.id} onClick={() => setMode(m.id)} aria-pressed={on}
-              className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-[12.5px] font-medium transition ${on ? "border-violet-500 bg-violet-500/15 text-violet-200" : "border-line text-ink-muted hover:border-line-strong hover:text-ink"}`}>
+              className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-[12.5px] font-medium transition ${on ? "border-violet-500 bg-violet-500/15 text-violet-200" : "border-line text-ink-muted hover:border-line-strong hover:text-ink"}`}>
               <Icon className="h-3.5 w-3.5" /> {m.label}
             </button>
           );

@@ -37,7 +37,7 @@ export function EnvironmentalTestPanel() {
         </span>
       </div>
       {zone && (
-        <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-[minmax(0,1fr)_180px]">
+        <div className="mt-3 grid min-h-[150px] grid-cols-1 gap-3 sm:grid-cols-[minmax(0,1fr)_180px]">
           <div>
             <h3 className="font-display text-[15px] font-semibold text-ink">{zone.name}</h3>
             <p className="mt-1 text-[12.5px] leading-relaxed text-ink-muted">{zone.whatHappens}</p>

@@ -18,12 +18,21 @@ const STAGE = {
  */
 export function ActiveRunBar({ startable = false }: { startable?: boolean }) {
   const { run, ready, startRun, clearRun } = useFactoryRun();
-  if (!ready) return null;
+
+  // When this bar can host a run it sits ABOVE page content, so it must reserve a
+  // stable height across the not-ready / no-run / active-run states. Otherwise it
+  // renders null (or a short bar) and then grows on hydration or on "Start a demo
+  // run", shoving everything below it down under the finger.
+  const reserve = startable ? "min-h-[120px] sm:min-h-[100px]" : "";
+
+  if (!ready) {
+    return startable ? <div className={reserve} aria-hidden /> : null;
+  }
 
   if (!run) {
     if (!startable) return null;
     return (
-      <div className="panel flex flex-wrap items-center justify-between gap-3 px-4 py-3">
+      <div className={`${reserve} panel flex flex-wrap items-center justify-between gap-3 px-4 py-3`}>
         <div className="flex items-center gap-2">
           <GitBranch className="h-4 w-4 text-violet-300" />
           <p className="text-[12.5px] text-ink-muted">No active run. Start one to carry a sample across the factory.</p>
@@ -40,7 +49,7 @@ export function ActiveRunBar({ startable = false }: { startable?: boolean }) {
   const thread = runThread(run);
 
   return (
-    <div className="panel-raised p-3.5">
+    <div className={`${reserve} panel-raised p-3.5`}>
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-2">
           <span className="flex items-center gap-1.5 font-mono text-[11px] text-violet-300">

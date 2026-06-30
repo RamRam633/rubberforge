@@ -120,7 +120,7 @@ export default function MaterialsPage() {
           onClick={() => setSelectedId(null)}
         >
           <div
-            className="panel-raised relative max-h-[88vh] w-full max-w-2xl overflow-y-auto p-5 sm:p-6"
+            className="panel-raised relative max-h-[88dvh] w-full max-w-2xl overflow-y-auto p-5 sm:p-6"
             onClick={(e) => e.stopPropagation()}
           >
             <button

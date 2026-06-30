@@ -38,7 +38,7 @@ export function LayerToggleBar({
             aria-selected={on}
             onClick={() => onChange(l.id)}
             title={l.oneLiner}
-            className="inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-[12px] font-medium transition"
+            className="inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-2 text-[12px] font-medium transition"
             style={
               on
                 ? { borderColor: l.accent, backgroundColor: `${l.accent}1f`, color: l.accent }

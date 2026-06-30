@@ -43,7 +43,7 @@ export function FactoryZoneMap() {
         </div>
       </div>
 
-      <div className="panel-raised p-4 lg:sticky lg:top-4 lg:self-start">
+      <div className="panel-raised min-h-[340px] p-4 lg:min-h-0 lg:sticky lg:top-4 lg:self-start">
         <span className="inline-block rounded border border-line bg-base-950/50 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-violet-300">
           {active.signText}
         </span>

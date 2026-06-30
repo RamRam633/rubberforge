@@ -15,7 +15,7 @@ export function ChemistryModePanel({
   materialStateLabel: string;
 }) {
   return (
-    <div className="pointer-events-none absolute bottom-3 left-3 z-10 max-h-[88%] w-[330px] max-w-[82%] overflow-y-auto rounded-xl border border-violet-500/25 bg-base-900/85 backdrop-blur-md">
+    <div className="pointer-events-auto absolute bottom-3 left-3 z-10 max-h-[78%] w-[330px] max-w-[82%] overflow-y-auto rounded-xl border border-violet-500/25 bg-base-900/85 backdrop-blur-md">
       <div className="flex items-center gap-1.5 border-b border-line px-3 py-2">
         <FlaskConical className="h-3.5 w-3.5 text-violet-300" />
         <span className="label-mono text-violet-300">Chemistry view</span>

@@ -278,7 +278,7 @@ export default function FactoryIntelligencePage() {
           onClick={() => setSelectedEquipmentId(null)}
         >
           <div
-            className="panel-raised relative max-h-[88vh] w-full max-w-2xl overflow-y-auto p-5"
+            className="panel-raised relative max-h-[88dvh] w-full max-w-2xl overflow-y-auto p-5"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -303,7 +303,7 @@ export default function FactoryIntelligencePage() {
           onClick={() => setSelectedIngredientId(null)}
         >
           <div
-            className="panel-raised relative max-h-[88vh] w-full max-w-2xl overflow-y-auto p-5"
+            className="panel-raised relative max-h-[88dvh] w-full max-w-2xl overflow-y-auto p-5"
             onClick={(e) => e.stopPropagation()}
           >
             <button

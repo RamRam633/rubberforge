@@ -128,10 +128,13 @@ export function FactoryStage({ state }: { state: SimState }) {
           />
         )}
 
-        {/* Orbit hint */}
-        <div className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1.5 rounded-md border border-line bg-base-900/70 px-2 py-1 font-mono text-[10px] text-ink-faint backdrop-blur-sm">
-          <Move3d className="h-3 w-3" /> drag to orbit · scroll to zoom
-        </div>
+        {/* Orbit hint - hidden when an info overlay occupies the stage bottom so
+            they never overlap on a phone */}
+        {mode !== "intel" && mode !== "chemistry" && (
+          <div className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1.5 rounded-md border border-line bg-base-900/70 px-2 py-1 font-mono text-[10px] text-ink-faint backdrop-blur-sm">
+            <Move3d className="h-3 w-3" /> drag to orbit · scroll to zoom
+          </div>
+        )}
       </div>
 
       {/* Progress rail */}

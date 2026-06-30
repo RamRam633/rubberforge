@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, PlayCircle, FileText, ChevronDown } from "lucide-react";
 import { ModeSwitcher } from "./brand/ModeSwitcher";
+import { useScrollLock } from "@/lib/useScrollLock";
 
 const PRIMARY = [
   { href: "/simulator", label: "Virtual Factory" },
@@ -61,6 +62,7 @@ export function SiteNav() {
   const [open, setOpen] = useState(false);
   const [menu, setMenu] = useState<MenuId | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
+  useScrollLock(open); // freeze the page behind the open mobile menu
   const isActive = (href: string) => {
     const base = href.split("#")[0];
     return base === "/" ? pathname === "/" : pathname.startsWith(base);

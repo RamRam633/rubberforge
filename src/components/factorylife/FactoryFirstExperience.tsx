@@ -71,7 +71,7 @@ export function FactoryFirstExperience() {
               animate={{ scale: 1, y: 0, opacity: 1 }}
               exit={{ scale: 0.97, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="panel-raised w-full max-w-2xl p-5 sm:p-6"
+              className="panel-raised relative max-h-[88dvh] w-full max-w-2xl overflow-y-auto overscroll-contain p-5 sm:p-6"
             >
               <div className="flex items-start justify-between gap-3">
                 <div>

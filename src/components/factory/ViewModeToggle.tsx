@@ -21,7 +21,7 @@ export function ViewModeToggle({ mode, onChange }: { mode: ViewMode; onChange: (
           <button
             key={m.id}
             onClick={() => onChange(m.id)}
-            className={`flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[12px] transition ${
+            className={`flex items-center gap-1.5 rounded-md px-2.5 py-2 text-[12px] transition ${
               active ? "bg-base-600 text-ink shadow-sm" : "text-ink-muted hover:text-ink"
             }`}
             title={m.label}

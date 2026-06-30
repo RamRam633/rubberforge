@@ -42,7 +42,7 @@ export function CompletionModal({
         initial={{ scale: 0.94, opacity: 0, y: 12 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 220, damping: 22 }}
-        className="panel relative max-h-[88vh] w-full max-w-2xl overflow-y-auto"
+        className="panel relative max-h-[88dvh] w-full max-w-2xl overflow-y-auto"
       >
         <button
           onClick={onClose}

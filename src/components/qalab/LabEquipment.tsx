@@ -40,7 +40,7 @@ export function LabEquipmentDetailPanel({ eq, onClose }: { eq: LabEquip; onClose
   const Icon = c.Icon;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1f1b17]/40 p-4 backdrop-blur-sm" onClick={onClose}>
-      <div className="panel-raised max-h-[88vh] w-full max-w-lg overflow-y-auto p-5" onClick={(e) => e.stopPropagation()}>
+      <div className="panel-raised max-h-[88dvh] w-full max-w-lg overflow-y-auto p-5" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-2.5">
             <span className="flex h-9 w-9 items-center justify-center rounded-lg border" style={{ borderColor: `${c.accent}44`, backgroundColor: `${c.accent}18` }}>

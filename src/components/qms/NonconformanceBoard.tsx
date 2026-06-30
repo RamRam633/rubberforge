@@ -70,7 +70,7 @@ export function NonconformanceBoard() {
 
       {sel && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1f1b17]/40 p-4 backdrop-blur-sm" onClick={() => setSel(null)}>
-          <div className="panel-raised w-full max-w-lg p-5" onClick={(e) => e.stopPropagation()}>
+          <div className="panel-raised relative max-h-[88dvh] w-full max-w-lg overflow-y-auto overscroll-contain p-5" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-start justify-between gap-3">
               <div>
                 <span className="font-mono text-[10px] text-ink-faint">{sel.id.toUpperCase()} · demo NCR</span>

@@ -74,14 +74,23 @@ export function RiskHeatMap() {
 }
 
 export function RiskRegister() {
-  const [open, setOpen] = useState<string | null>(null);
+  // Multi-open so expanding one row never collapses a row above it (which would
+  // jerk the tapped header upward under the finger).
+  const [open, setOpen] = useState<Set<string>>(() => new Set());
+  const toggle = (id: string) =>
+    setOpen((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
   return (
     <div className="flex flex-col gap-2">
       {riskRegister.map((r) => {
-        const isOpen = open === r.id;
+        const isOpen = open.has(r.id);
         return (
           <div key={r.id} className="panel overflow-hidden">
-            <button onClick={() => setOpen(isOpen ? null : r.id)} className="flex w-full items-center gap-3 px-3.5 py-2.5 text-left">
+            <button onClick={() => toggle(r.id)} className="flex w-full items-center gap-3 px-3.5 py-3 text-left">
               <span className="min-w-0 flex-1">
                 <span className="block text-[12.5px] font-medium text-ink">{r.riskStatement}</span>
                 <span className="block text-[10.5px] text-ink-faint">{r.processArea}</span>

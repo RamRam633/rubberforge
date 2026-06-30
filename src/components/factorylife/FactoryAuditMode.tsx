@@ -21,7 +21,17 @@ const CATEGORY_ORDER: AuditCategory[] = [
 
 export function FactoryAuditMode() {
   const [checked, setChecked] = useState<Set<string>>(new Set());
-  const [open, setOpen] = useState<AuditCategory | null>("raw-material");
+  // Multi-open: opening one section must never collapse another. Collapsing a
+  // section above the tapped header would shift everything up and yank the header
+  // out from under the finger (the worst tap-jump in the app).
+  const [open, setOpen] = useState<Set<AuditCategory>>(() => new Set<AuditCategory>(["raw-material"]));
+  const toggleOpen = (c: AuditCategory) =>
+    setOpen((prev) => {
+      const next = new Set(prev);
+      if (next.has(c)) next.delete(c);
+      else next.add(c);
+      return next;
+    });
 
   const result = useMemo(() => computeReadiness(checked), [checked]);
 
@@ -73,13 +83,13 @@ export function FactoryAuditMode() {
 
         <div className="mt-3 flex flex-col gap-2">
           {groups.map((g) => {
-            const isOpen = open === g.category;
+            const isOpen = open.has(g.category);
             const done = g.items.filter((i) => checked.has(i.id)).length;
             return (
               <div key={g.category} className="overflow-hidden rounded-lg border border-line">
                 <button
-                  onClick={() => setOpen(isOpen ? null : g.category)}
-                  className="flex w-full items-center justify-between gap-2 bg-base-850/50 px-3 py-2 text-left transition hover:bg-base-800/60"
+                  onClick={() => toggleOpen(g.category)}
+                  className="flex w-full items-center justify-between gap-2 bg-base-850/50 px-3 py-2.5 text-left transition hover:bg-base-800/60"
                   aria-expanded={isOpen}
                 >
                   <span className="flex items-center gap-2 text-[13px] font-medium text-ink">
