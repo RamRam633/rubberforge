@@ -9,78 +9,79 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Factory Control Room: light steel surface scale. Higher number = a
-        // slightly deeper steel, used for subtle insets, hover, and active
-        // states layered over white panels.
+        // VayuAI family: warm-paper surface scale (matches mulya/srota/anatomy).
+        // Lower number = warm white (raised cards), higher = deeper warm tan,
+        // used for insets, hover, and active states layered over paper.
         base: {
-          950: "#fbfcfe",
-          900: "#f4f6f9",
-          850: "#eef2f6",
-          800: "#e8edf3",
-          700: "#e1e7ee",
-          600: "#d4dbe4",
-          500: "#c2cad6",
-          400: "#aab4c2",
+          950: "#fffdf8",
+          900: "#faf6ec",
+          850: "#f2ecdd",
+          800: "#ece4d2",
+          700: "#e6ddca",
+          600: "#ddd1ba",
+          500: "#cabd9f",
+          400: "#b3a484",
         },
-        // Steel hairline borders on light.
+        // Warm tan hairline borders on paper (rgba of the warm near-black).
         line: {
-          DEFAULT: "rgba(15,23,42,0.12)",
-          strong: "rgba(15,23,42,0.22)",
+          DEFAULT: "rgba(31,27,23,0.14)",
+          strong: "rgba(31,27,23,0.26)",
         },
-        // Graphite / slate text on light surfaces.
+        // Warm near-black text on paper surfaces.
         ink: {
-          DEFAULT: "#111827",
-          muted: "#475569",
-          faint: "#64748b",
+          DEFAULT: "#1f1b17",
+          muted: "#6b6356",
+          faint: "#9a9082",
         },
-        // Amber: active production / cure / heat. -300 darkened for accent text,
-        // -400 mid for icons, borders, and tints.
+        // Gold: the family's dominant warm accent (active production / cure /
+        // heat / emphasis). -200/-300 darkened for accent text, -400 mid for
+        // icons, borders, and tints. (Token name kept as `molten` to cascade.)
         molten: {
-          50: "#fffbeb",
-          200: "#92400e",
-          300: "#b45309",
-          400: "#d97706",
-          500: "#ea8d04",
-          600: "#c2410c",
-          700: "#9a3412",
+          50: "#faf4e2",
+          200: "#6b4e07",
+          300: "#8a6608",
+          400: "#b8860b",
+          500: "#c2900d",
+          600: "#9a6b10",
+          700: "#7a5409",
         },
-        // Violet: chemistry / crosslink / QMS governance, used sparingly. -300
-        // is a dark, readable accent text tone; -500 is the mid brand tone.
+        // Violet: family primary action / chemistry / crosslink / QMS. -200/-300
+        // are dark, readable accent-text tones; -400/-500 the mid brand tone.
         violet: {
-          200: "#5b21b6",
-          300: "#6d28d9",
-          400: "#7c3aed",
-          500: "#7c3aed",
-          600: "#6d28d9",
-          700: "#5b21b6",
+          200: "#4a2a8f",
+          300: "#5a35b0",
+          400: "#6d3bd4",
+          500: "#6d3bd4",
+          600: "#5a35b0",
+          700: "#4a2a8f",
         },
-        // VayuAI blue: brand, navigation, primary actions. -300 dark accent
-        // text, -500 primary, -700 deep engineering blue.
+        // The family has no blue: `blue` is pointed at the family violet so all
+        // legacy brand/nav/primary usages recolor to the family primary action.
         blue: {
-          300: "#1d4ed8",
-          400: "#2563eb",
-          500: "#2563eb",
-          600: "#1d4ed8",
-          700: "#1e3a8a",
+          300: "#5a35b0",
+          400: "#6d3bd4",
+          500: "#6d3bd4",
+          600: "#5a35b0",
+          700: "#4a2a8f",
         },
-        // QA cyan: measurement, digital thread, test data.
+        // QA cyan: measurement, digital thread, test data (family #0e8fa8).
         cyan: {
-          300: "#0e7490",
-          400: "#0891b2",
-          500: "#0891b2",
-          600: "#0e7490",
-          700: "#155e75",
+          300: "#0e7a8f",
+          400: "#0e8fa8",
+          500: "#0e8fa8",
+          600: "#0e7a8f",
+          700: "#0a5f70",
         },
-        // Steel neutral for data / muted detail.
+        // Warm taupe neutral for data / muted detail.
         steel: {
-          300: "#64748b",
-          400: "#475569",
-          500: "#334155",
+          300: "#8a8073",
+          400: "#6b6356",
+          500: "#4a443b",
         },
-        // Status (readable on white)
-        pass: "#16a34a",
-        warn: "#d97706",
-        fail: "#dc2626",
+        // Status (readable on warm paper)
+        pass: "#15803d",
+        warn: "#b8860b",
+        fail: "#c0392b",
         // Rubber material UI swatches (the 3D scene has its own materials).
         rubber: {
           raw: "#3a3d42",
@@ -95,16 +96,17 @@ const config: Config = {
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       boxShadow: {
-        glow: "0 0 22px -6px rgba(245,158,11,0.4)",
-        "glow-violet": "0 8px 22px -10px rgba(37,99,235,0.45)",
-        "glow-blue": "0 8px 22px -10px rgba(37,99,235,0.45)",
-        panel: "0 1px 2px 0 rgba(16,24,40,0.05), 0 12px 32px -18px rgba(16,24,40,0.18)",
-        "panel-violet": "0 1px 2px 0 rgba(16,24,40,0.06), 0 18px 44px -22px rgba(16,24,40,0.22)",
+        glow: "0 0 22px -6px rgba(184,134,11,0.42)",
+        "glow-violet": "0 8px 22px -10px rgba(109,59,212,0.45)",
+        "glow-blue": "0 8px 22px -10px rgba(109,59,212,0.45)",
+        panel: "0 1px 2px 0 rgba(31,27,23,0.05), 0 12px 32px -18px rgba(31,27,23,0.16)",
+        "panel-violet": "0 1px 2px 0 rgba(31,27,23,0.06), 0 18px 44px -22px rgba(31,27,23,0.2)",
       },
       backgroundImage: {
         "grid-faint":
-          "linear-gradient(rgba(15,23,42,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.04) 1px, transparent 1px)",
-        "brand-gradient": "linear-gradient(120deg, #2563eb 0%, #1d4ed8 55%, #3b82f6 100%)",
+          "linear-gradient(rgba(31,27,23,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(31,27,23,0.04) 1px, transparent 1px)",
+        // Family gradient-quantum (violet -> cyan -> magenta).
+        "brand-gradient": "linear-gradient(120deg, #6d3bd4 0%, #0e8fa8 55%, #bd3478 100%)",
       },
       keyframes: {
         "pulse-glow": {

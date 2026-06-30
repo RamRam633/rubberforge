@@ -40,7 +40,7 @@ export function WeighingStationModel({ active, transforming, progress = 0, done 
   const screenMat = useMemo(
     () =>
       new THREE.MeshStandardMaterial({
-        color: "#06222b",
+        color: "#08272e",
         emissive: "#14c98f",
         emissiveIntensity: 0.4,
         roughness: 0.18,
@@ -53,14 +53,14 @@ export function WeighingStationModel({ active, transforming, progress = 0, done 
 
   // Tinted overlay heap material so the tray colour tracks batch state without
   // rebuilding a material every frame. Re-created only when the stage changes.
-  const trayHeapColor = done ? "#15161b" : transforming ? "#141418" : "#101014";
+  const trayHeapColor = done ? "#15161b" : transforming ? "#151210" : "#101014";
   const trayHeapMat = useMemo(() => rubberSheetMaterial(trayHeapColor, 0.9), [trayHeapColor]);
 
   // The growing heap of weighed compound sitting in the tray.
   const heapMat = useMemo(
     () =>
       new THREE.MeshStandardMaterial({
-        color: "#141418",
+        color: "#151210",
         roughness: 0.92,
         metalness: 0.05,
         flatShading: true,
@@ -230,7 +230,7 @@ export function WeighingStationModel({ active, transforming, progress = 0, done 
           {/* per-hopper status light */}
           <IndicatorLight
             position={[hx, HOPPER_Y + 0.36, 0.2]}
-            color={i === 1 ? "#34d399" : "#38bdf8"}
+            color={i === 1 ? "#34d399" : "#2ba6c4"}
             on={on}
           />
         </group>
@@ -280,7 +280,7 @@ export function WeighingStationModel({ active, transforming, progress = 0, done 
 
       {/* ── Material containers around the station ── */}
       {/* steel drum of compound (infeed side) */}
-      <Drum position={[-1.95, 0.55, 0.95]} color="#3a4654" />
+      <Drum position={[-1.95, 0.55, 0.95]} color="#383029" />
 
       {/* black-filler bin (open-top tote with carbon-black filler) */}
       <group position={[-1.95, 0, -0.95]}>

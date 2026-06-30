@@ -2,8 +2,8 @@ import type { SupplyChainStage, SupplyStageType } from "@/types/factoryIntel";
 import { FileCheck } from "lucide-react";
 
 const TYPE: Record<SupplyStageType, { label: string; dot: string; chip: string }> = {
-  supplier: { label: "Supplier", dot: "#7c3aed", chip: "border-violet-500/30 text-violet-300" },
-  inbound: { label: "Inbound", dot: "#38bdf8", chip: "border-steel-400/30 text-steel-300" },
+  supplier: { label: "Supplier", dot: "#6d3bd4", chip: "border-violet-500/30 text-violet-300" },
+  inbound: { label: "Inbound", dot: "#2ba6c4", chip: "border-steel-400/30 text-steel-300" },
   internal: { label: "Internal", dot: "#ff8c2b", chip: "border-molten-400/30 text-molten-300" },
   outbound: { label: "Outbound", dot: "#35d6a4", chip: "border-pass/30 text-pass" },
 };

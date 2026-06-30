@@ -240,8 +240,8 @@ export function CoolingConveyorModel({ active, transforming, progress = 0, done 
       {/* ── Operator-side control panel + status lamps facing +Z ───── */}
       <ControlPanel position={[-BED_HALF - 0.2, 0, RAIL_Z + 0.6]} rotation={[0, 0.35, 0]} on={on} />
       <group position={[0, DECK_Y + 0.34, RAIL_Z + 0.04]}>
-        <IndicatorLight position={[-0.8, 0, 0]} color="#38bdf8" on={on} />
-        <IndicatorLight position={[-0.55, 0, 0]} color={done ? "#34d399" : "#64748b"} on={done || on} />
+        <IndicatorLight position={[-0.8, 0, 0]} color="#2ba6c4" on={on} />
+        <IndicatorLight position={[-0.55, 0, 0]} color={done ? "#34d399" : "#8a8073"} on={done || on} />
       </group>
     </group>
   );

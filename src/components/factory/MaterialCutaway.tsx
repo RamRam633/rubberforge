@@ -75,7 +75,7 @@ function DispersionInset({ p }: { p: number }) {
         const merge = Math.max(0, 1 - p * 1.4);
         return <circle key={i} cx={cx} cy={cy} r={1.4 + (i % 3) * 0.7} fill={cols[i % cols.length]} opacity={merge * 0.9} />;
       })}
-      <text x="100" y="124" textAnchor="middle" fill="#7c8597" fontSize="8" fontFamily="monospace">
+      <text x="100" y="124" textAnchor="middle" fill="#8a8073" fontSize="8" fontFamily="monospace">
         {p > 0.6 ? "DISPERSED" : "DISPERSING"}
       </text>
     </g>
@@ -87,16 +87,16 @@ function BandingInset({ p }: { p: number }) {
   const wob = (1 - p) * 8;
   return (
     <g>
-      <circle cx="70" cy="62" r="34" fill="#171a20" stroke="#2c313a" />
-      <circle cx="130" cy="62" r="34" fill="#171a20" stroke="#2c313a" />
+      <circle cx="70" cy="62" r="34" fill="#171a20" stroke="#2b2722" />
+      <circle cx="130" cy="62" r="34" fill="#171a20" stroke="#2b2722" />
       <path
         d={`M40 62 q15 ${-wob} 30 0 t30 0 t30 0 t30 0`}
         fill="none"
-        stroke="#16161a"
+        stroke="#161310"
         strokeWidth={5 + p * 2}
         strokeLinecap="round"
       />
-      <text x="100" y="118" textAnchor="middle" fill="#7c8597" fontSize="8" fontFamily="monospace">
+      <text x="100" y="118" textAnchor="middle" fill="#8a8073" fontSize="8" fontFamily="monospace">
         {p > 0.6 ? "HOMOGENIZED" : "FOLDING / SMOOTHING"}
       </text>
     </g>
@@ -108,12 +108,12 @@ function NipInset({ p }: { p: number }) {
   const thick = 18 - p * 12;
   return (
     <g>
-      <circle cx="70" cy="44" r="26" fill="#cdd4dc" opacity="0.9" />
-      <circle cx="70" cy="92" r="26" fill="#cdd4dc" opacity="0.9" />
+      <circle cx="70" cy="44" r="26" fill="#ddd1ba" opacity="0.9" />
+      <circle cx="70" cy="92" r="26" fill="#ddd1ba" opacity="0.9" />
       <rect x="26" y={68 - thick / 2} width="40" height={thick} fill="#202225" />
-      <rect x="96" y={68 - 3} width="80" height="6" rx="2" fill="#1a1b1f" />
-      <line x1="150" y1="50" x2="150" y2="86" stroke="#38bdf8" strokeWidth="1" opacity="0.7" />
-      <text x="100" y="122" textAnchor="middle" fill="#7c8597" fontSize="8" fontFamily="monospace">
+      <rect x="96" y={68 - 3} width="80" height="6" rx="2" fill="#1b1714" />
+      <line x1="150" y1="50" x2="150" y2="86" stroke="#2ba6c4" strokeWidth="1" opacity="0.7" />
+      <text x="100" y="122" textAnchor="middle" fill="#8a8073" fontSize="8" fontFamily="monospace">
         GAUGE: {p > 0.6 ? "EVEN" : "FORMING"}
       </text>
     </g>
@@ -126,13 +126,13 @@ function BeforeAfterInset({ step, p }: { step: ProcessStep; p: number }) {
   const b = materialStates[step.outputStateId];
   return (
     <g>
-      <rect x="22" y="34" width="58" height="58" rx="8" fill={a.tone} stroke="#2c313a" />
-      <text x="51" y="104" textAnchor="middle" fill="#7c8597" fontSize="7.5" fontFamily="monospace">
+      <rect x="22" y="34" width="58" height="58" rx="8" fill={a.tone} stroke="#2b2722" />
+      <text x="51" y="104" textAnchor="middle" fill="#8a8073" fontSize="7.5" fontFamily="monospace">
         {a.short.toUpperCase()}
       </text>
       <g opacity={0.4 + p * 0.6}>
-        <rect x="120" y="34" width="58" height="58" rx="8" fill={b.tone} stroke="#3a414e" />
-        <text x="149" y="104" textAnchor="middle" fill="#9aa4b6" fontSize="7.5" fontFamily="monospace">
+        <rect x="120" y="34" width="58" height="58" rx="8" fill={b.tone} stroke="#36302a" />
+        <text x="149" y="104" textAnchor="middle" fill="#9a9082" fontSize="7.5" fontFamily="monospace">
           {b.short.toUpperCase()}
         </text>
       </g>

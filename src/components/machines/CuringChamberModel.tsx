@@ -127,7 +127,7 @@ export function CuringChamberModel({ active, transforming, progress = 0, done }:
 
   // Shell paint for the main pressure vessel.
   const shellMat = useMemo(
-    () => new THREE.MeshStandardMaterial({ color: "#5a6470", roughness: 0.34, metalness: 0.82 }),
+    () => new THREE.MeshStandardMaterial({ color: "#645c4e", roughness: 0.34, metalness: 0.82 }),
     [],
   );
 

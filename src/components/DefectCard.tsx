@@ -4,8 +4,8 @@ import type { Defect, Severity } from "@/types/simulation";
 import { MapPin, ShieldCheck, Search } from "lucide-react";
 
 const SEVERITY: Record<Severity, { label: string; cls: string; dot: string }> = {
-  low: { label: "Low impact", cls: "border-steel-400/40 text-steel-300", dot: "#38bdf8" },
-  medium: { label: "Medium impact", cls: "border-warn/40 text-warn", dot: "#fbbf24" },
+  low: { label: "Low impact", cls: "border-steel-400/40 text-steel-300", dot: "#8a8073" },
+  medium: { label: "Medium impact", cls: "border-warn/40 text-warn", dot: "#d8a93a" },
   high: { label: "High impact", cls: "border-fail/40 text-fail", dot: "#f87171" },
 };
 
@@ -50,13 +50,13 @@ export function DefectSymptom({ id, className = "" }: { id: string; className?: 
       {id === "under-cure" && (
         <>
           <path d="M10 40 Q35 30 60 42 T110 38" fill="none" stroke="#5b6068" strokeWidth="6" strokeLinecap="round" opacity="0.5" />
-          <text x="60" y="60" textAnchor="middle" fontSize="9" fill="#6b7280" fontFamily="monospace">soft / tacky</text>
+          <text x="60" y="60" textAnchor="middle" fontSize="9" fill="#7a7062" fontFamily="monospace">soft / tacky</text>
         </>
       )}
       {id === "surface-contamination" &&
         Array.from({ length: 6 }).map((_, i) => (
           <g key={i}>
-            <circle cx={16 + i * 17} cy={18 + ((i * 23) % 34)} r="2.6" fill="#6b7280" />
+            <circle cx={16 + i * 17} cy={18 + ((i * 23) % 34)} r="2.6" fill="#7a7062" />
             <circle cx={16 + i * 17} cy={18 + ((i * 23) % 34)} r="5" fill="none" stroke="#3c3f45" strokeWidth="1" />
           </g>
         ))}

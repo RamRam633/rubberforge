@@ -7,9 +7,9 @@ import { statusClass, prettyStatus } from "@/lib/qmsUi";
 import { GitBranch, ArrowRight, Factory, FlaskConical, CircleCheck, Play, X } from "lucide-react";
 
 const STAGE = {
-  production: { label: "On the production floor", Icon: Factory, color: "#d97706" },
-  qa: { label: "In the QA Lab", Icon: FlaskConical, color: "#0891b2" },
-  released: { label: "Released", Icon: CircleCheck, color: "#22c55e" },
+  production: { label: "On the production floor", Icon: Factory, color: "#b8860b" },
+  qa: { label: "In the QA Lab", Icon: FlaskConical, color: "#0e8fa8" },
+  released: { label: "Released", Icon: CircleCheck, color: "#15803d" },
 } as const;
 
 /**
@@ -47,7 +47,7 @@ export function ActiveRunBar({ startable = false }: { startable?: boolean }) {
             <GitBranch className="h-3.5 w-3.5" /> {run.runId}
           </span>
           <span className="chip border-line text-ink-muted">{run.productName}</span>
-          <span className="chip" style={{ borderColor: "#7c3aed55", color: "#7c3aed" }}>{run.materialAbbr}</span>
+          <span className="chip" style={{ borderColor: "#6d3bd455", color: "#6d3bd4" }}>{run.materialAbbr}</span>
           <span className="chip inline-flex items-center gap-1" style={{ borderColor: `${stage.color}55`, color: stage.color }}>
             <StageIcon className="h-3 w-3" /> {stage.label}
           </span>
@@ -63,7 +63,7 @@ export function ActiveRunBar({ startable = false }: { startable?: boolean }) {
           <span key={t.id} className="flex items-center gap-1.5">
             <span className="rounded-md border border-line bg-base-850/50 px-2 py-1 text-[11px]" title={t.label}>
               <span className="text-ink-faint">{t.label.split(" ")[0]} </span>
-              <span className="font-mono text-cyan-300" style={{ color: "#0891b2" }}>{t.id}</span>
+              <span className="font-mono text-cyan-300" style={{ color: "#0e8fa8" }}>{t.id}</span>
             </span>
             {i < thread.length - 1 && <ArrowRight className="h-3 w-3 text-ink-faint" />}
           </span>

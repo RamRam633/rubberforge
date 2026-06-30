@@ -94,7 +94,7 @@ function Network({ phaseRef }: { phaseRef: React.MutableRefObject<Phase> }) {
         return (
           <mesh key={`bb-${i}`} position={mid} quaternion={quat}>
             <cylinderGeometry args={[0.05, 0.05, len, 6]} />
-            <meshStandardMaterial color="#4b4f57" roughness={0.6} />
+            <meshStandardMaterial color="#4a443b" roughness={0.6} />
           </mesh>
         );
       })}
@@ -103,7 +103,7 @@ function Network({ phaseRef }: { phaseRef: React.MutableRefObject<Phase> }) {
       {nodes.map((p, i) => (
         <mesh key={`nd-${i}`} position={p}>
           <sphereGeometry args={[0.26, 18, 18]} />
-          <meshStandardMaterial color="#20232a" roughness={0.35} metalness={0.2} />
+          <meshStandardMaterial color="#202225" roughness={0.35} metalness={0.2} />
         </mesh>
       ))}
 
@@ -145,7 +145,7 @@ export default function MolecularScene({ phase }: { phase: Phase }) {
       <color attach="background" args={["#0c0a09"]} />
       <ambientLight intensity={1.2} />
       <directionalLight position={[5, 5, 8]} intensity={2.6} color="#ffb066" />
-      <directionalLight position={[-6, -3, 4]} intensity={1.3} color="#38bdf8" />
+      <directionalLight position={[-6, -3, 4]} intensity={1.3} color="#2ba6c4" />
       <Network phaseRef={phaseRef} />
     </Canvas>
   );

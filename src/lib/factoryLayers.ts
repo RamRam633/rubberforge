@@ -2,7 +2,7 @@ import type { FactoryLayer, FactoryLayerId } from "@/types/factoryPlatform";
 export const factoryLayers: FactoryLayer[] = [
   {
     "id": "process",
-    "accent": "#d97706",
+    "accent": "#b8860b",
     "icon": "route",
     "name": "Process",
     "oneLiner": "What this station physically does to the material: the transformation it performs, what enters, what leaves, and why the step matters to the finished sheet.",
@@ -14,7 +14,7 @@ export const factoryLayers: FactoryLayer[] = [
   },
   {
     "id": "chemistry",
-    "accent": "#7c3aed",
+    "accent": "#6d3bd4",
     "icon": "flask",
     "name": "Chemistry",
     "oneLiner": "The conceptual chemistry behind the station: how the compound is built, conditioned, and (at curing) crosslinked into an elastic network, with no formulations or cure parameters.",
@@ -26,7 +26,7 @@ export const factoryLayers: FactoryLayer[] = [
   },
   {
     "id": "quality",
-    "accent": "#2563eb",
+    "accent": "#6d3bd4",
     "icon": "shield",
     "name": "Quality",
     "oneLiner": "The in-process quality view of the station: the conceptual checks performed, what a release decision depends on, and how material is held or passed forward.",
@@ -74,7 +74,7 @@ export const factoryLayers: FactoryLayer[] = [
   },
   {
     "id": "documentation",
-    "accent": "#64748b",
+    "accent": "#8a8073",
     "icon": "file",
     "name": "Documentation",
     "oneLiner": "The paper trail this station contributes: the records and certificates a buyer may expect, what each one does and does not prove, and where traceability is captured.",
@@ -86,7 +86,7 @@ export const factoryLayers: FactoryLayer[] = [
   },
   {
     "id": "rfq",
-    "accent": "#9333ea",
+    "accent": "#6d3bd4",
     "icon": "clipboard",
     "name": "RFQ / Commercial",
     "oneLiner": "How this station feeds the commercial outputs: the feasibility, capacity, and sourcing signals it contributes to a quote package, factory audit, and other deliverables, all preliminary.",

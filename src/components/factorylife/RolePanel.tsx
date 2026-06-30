@@ -3,12 +3,12 @@ import { processSteps } from "@/lib/processData";
 import { Eye, FileText, ShieldCheck, FileSignature, HardHat } from "lucide-react";
 
 export const VEST_SWATCH: Record<VestColor, string> = {
-  amber: "#f59e0b",
-  blue: "#2563eb",
-  green: "#22c55e",
-  orange: "#ea8d04",
-  violet: "#7c3aed",
-  steel: "#94a3b8",
+  amber: "#b8860b",
+  blue: "#6d3bd4",
+  green: "#15803d",
+  orange: "#c2900d",
+  violet: "#6d3bd4",
+  steel: "#8a8073",
 };
 
 function stationTitle(id: string): string {

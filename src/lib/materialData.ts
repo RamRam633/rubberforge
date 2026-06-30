@@ -9,7 +9,7 @@ export const materialStates: Record<MaterialStateId, MaterialState> = {
     short: "Raw",
     description:
       "Distinct ingredient categories sit apart: a polymer bale, fine black filler, processing oil, protective additives, the cure package, and pigment. Nothing has combined yet.",
-    tone: "#8b94a6",
+    tone: "#9a9082",
   },
   "weighed-batch": {
     id: "weighed-batch",
@@ -17,7 +17,7 @@ export const materialStates: Record<MaterialStateId, MaterialState> = {
     short: "Batch",
     description:
       "Every category has been portioned into one batch on the tray. The recipe is assembled but still a loose collection of solids and liquids.",
-    tone: "#aeb6c4",
+    tone: "#c2b59a",
   },
   "rough-mixed": {
     id: "rough-mixed",

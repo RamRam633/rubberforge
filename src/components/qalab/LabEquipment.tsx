@@ -8,12 +8,12 @@ import { LabQMSBadge } from "@/components/qms/QMSBadge";
 import { FlaskConical, Wrench, Gauge, Thermometer, Ruler, FileText, X, Microscope, ShieldAlert, type LucideIcon } from "lucide-react";
 
 const CAT: Record<LabEquipCategory, { label: string; accent: string; Icon: LucideIcon }> = {
-  "rheology-cure": { label: "Rheology / cure", accent: "#f59e0b", Icon: FlaskConical },
-  mechanical: { label: "Mechanical", accent: "#2563eb", Icon: Wrench },
-  physical: { label: "Physical", accent: "#22c55e", Icon: Gauge },
-  environmental: { label: "Environmental", accent: "#ea8d04", Icon: Thermometer },
-  dimensional: { label: "Dimensional", accent: "#7c3aed", Icon: Ruler },
-  documentation: { label: "Documentation", accent: "#94a3b8", Icon: FileText },
+  "rheology-cure": { label: "Rheology / cure", accent: "#b8860b", Icon: FlaskConical },
+  mechanical: { label: "Mechanical", accent: "#6d3bd4", Icon: Wrench },
+  physical: { label: "Physical", accent: "#15803d", Icon: Gauge },
+  environmental: { label: "Environmental", accent: "#c2900d", Icon: Thermometer },
+  dimensional: { label: "Dimensional", accent: "#6d3bd4", Icon: Ruler },
+  documentation: { label: "Documentation", accent: "#8a8073", Icon: FileText },
 };
 const ORDER: LabEquipCategory[] = ["rheology-cure", "mechanical", "physical", "environmental", "dimensional", "documentation"];
 
@@ -39,7 +39,7 @@ export function LabEquipmentDetailPanel({ eq, onClose }: { eq: LabEquip; onClose
   const c = CAT[eq.category];
   const Icon = c.Icon;
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4 backdrop-blur-sm" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1f1b17]/40 p-4 backdrop-blur-sm" onClick={onClose}>
       <div className="panel-raised max-h-[88vh] w-full max-w-lg overflow-y-auto p-5" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-2.5">

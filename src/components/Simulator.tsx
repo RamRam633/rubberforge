@@ -124,9 +124,9 @@ export function Simulator() {
           aria-pressed={layer === "qms"}
           title="ISO 9001-aligned QMS lens"
           className="inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-[12px] font-medium transition sm:ml-auto"
-          style={layer === "qms" ? { borderColor: "#a855f7", backgroundColor: "#a855f71f", color: "#a855f7" } : { borderColor: "rgba(199,210,254,0.18)", color: "#9ea4d6" }}
+          style={layer === "qms" ? { borderColor: "#6d3bd4", backgroundColor: "#6d3bd41f", color: "#6d3bd4" } : { borderColor: "rgba(109,59,212,0.18)", color: "#5a35b0" }}
         >
-          <ShieldCheck className="h-3.5 w-3.5" style={{ color: "#a855f7" }} /> QMS
+          <ShieldCheck className="h-3.5 w-3.5" style={{ color: "#6d3bd4" }} /> QMS
         </button>
       </div>
 
@@ -195,7 +195,7 @@ export function Simulator() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#1f1b17]/40 p-4 backdrop-blur-sm"
           >
             <motion.div
               initial={{ scale: 0.95, y: 10, opacity: 0 }}

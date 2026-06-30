@@ -9,10 +9,10 @@ const LEVEL_TONE: Record<string, string> = {
 };
 
 const LEVEL_RING: Record<string, string> = {
-  emerging: "#9ea4d6",
-  developing: "#9aa9ff",
-  qualified: "#c3bdff",
-  "audit-ready": "#22c55e",
+  emerging: "#5a35b0",
+  developing: "#5a35b0",
+  qualified: "#6d3bd4",
+  "audit-ready": "#15803d",
 };
 
 export function FactoryReadinessScore({ result }: { result: ReadinessResult }) {
@@ -31,7 +31,7 @@ export function FactoryReadinessScore({ result }: { result: ReadinessResult }) {
       <div className="mt-3 flex items-center gap-4">
         <div className="relative h-[104px] w-[104px] shrink-0">
           <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90">
-            <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(15,23,42,0.10)" strokeWidth="8" />
+            <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(31, 27, 23,0.10)" strokeWidth="8" />
             <circle
               cx="50"
               cy="50"

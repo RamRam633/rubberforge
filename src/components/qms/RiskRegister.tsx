@@ -31,7 +31,7 @@ export function RiskHeatMap() {
   const cellColor = (s: number, l: number) => {
     const score = s + l;
     if (score >= 3) return "rgba(239,68,68,0.18)";
-    if (score >= 2) return "rgba(245,158,11,0.16)";
+    if (score >= 2) return "rgba(184, 134, 11,0.16)";
     return "rgba(34,197,94,0.14)";
   };
 

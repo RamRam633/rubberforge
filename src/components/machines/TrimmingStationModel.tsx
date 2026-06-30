@@ -114,10 +114,10 @@ export function TrimmingStationModel({ active, transforming, progress = 0, done 
   const rollR = WIND_CORE_R + wound * 0.7; // outer radius of the building roll
 
   // sheet colour: cured feed slightly rough, cleaner once trimmed/wound
-  const feedMat = useMemo(() => rubberSheetMaterial("#1a1b1f", 0.5), []);
+  const feedMat = useMemo(() => rubberSheetMaterial("#1b1714", 0.5), []);
   const woundMat = useMemo(() => rubberSheetMaterial("#161719", 0.42), []);
   // scrap edge strip, rough offcut compound
-  const scrapMat = useMemo(() => rubberSheetMaterial("#141418", 0.85), []);
+  const scrapMat = useMemo(() => rubberSheetMaterial("#151210", 0.85), []);
 
   return (
     <group>

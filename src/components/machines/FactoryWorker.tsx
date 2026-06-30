@@ -9,15 +9,15 @@ type Vec3 = [number, number, number];
 
 const VEST_HEX: Record<VestColor, string> = {
   amber: "#e2a629",
-  blue: "#2563eb",
+  blue: "#6d3bd4",
   green: "#37b24d",
   orange: "#e8730c",
-  violet: "#7a6cf0",
-  steel: "#9aa3ae",
+  violet: "#6d3bd4",
+  steel: "#a89c86",
 };
 
 const SKIN = new THREE.MeshStandardMaterial({ color: "#caa07a", roughness: 0.7, metalness: 0.02 });
-const TROUSER = new THREE.MeshStandardMaterial({ color: "#2c3340", roughness: 0.8, metalness: 0.05 });
+const TROUSER = new THREE.MeshStandardMaterial({ color: "#2a2622", roughness: 0.8, metalness: 0.05 });
 const BOOT = new THREE.MeshStandardMaterial({ color: "#15171b", roughness: 0.7, metalness: 0.1 });
 const HAT = new THREE.MeshStandardMaterial({ color: "#e8b923", roughness: 0.5, metalness: 0.1 });
 

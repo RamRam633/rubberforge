@@ -20,19 +20,19 @@ export function CrosslinkDiagram({
 
   return (
     <svg viewBox="0 0 240 150" className={className} role="img" aria-label={label || `Crosslink density: ${density}`}>
-      <rect x="0" y="0" width="240" height="150" rx="10" fill="#0c0a13" />
+      <rect x="0" y="0" width="240" height="150" rx="10" fill="#2a2622" />
       {/* polymer chains */}
       {chains.map((y, ci) => (
         <g key={ci}>
           <path
             d={`M14 ${y} q12 -8 24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0`}
             fill="none"
-            stroke="#5a5570"
+            stroke="#645c4e"
             strokeWidth="2.4"
             strokeLinecap="round"
           />
           {Array.from({ length: 9 }).map((_, n) => (
-            <circle key={n} cx={26 + n * 24} cy={y + (n % 2 ? -4 : 4)} r="3" fill="#23202e" stroke="#6a6486" strokeWidth="1" />
+            <circle key={n} cx={26 + n * 24} cy={y + (n % 2 ? -4 : 4)} r="3" fill="#3a342c" stroke="#6b6356" strokeWidth="1" />
           ))}
         </g>
       ))}
@@ -45,7 +45,7 @@ export function CrosslinkDiagram({
         );
       })}
       {label && (
-        <text x="120" y="142" textAnchor="middle" fill="#868ca6" fontSize="9" fontFamily="monospace" letterSpacing="1">
+        <text x="120" y="142" textAnchor="middle" fill="#9a9082" fontSize="9" fontFamily="monospace" letterSpacing="1">
           {label}
         </text>
       )}

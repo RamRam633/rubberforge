@@ -6,7 +6,7 @@ import type { LabVestColor } from "@/types/qaLab";
 import { HardHat, Eye, FileText, Gavel, MapPin } from "lucide-react";
 
 const VEST: Record<LabVestColor, string> = {
-  blue: "#2563eb", green: "#22c55e", violet: "#7c3aed", steel: "#94a3b8", amber: "#f59e0b", orange: "#ea8d04",
+  blue: "#6d3bd4", green: "#15803d", violet: "#6d3bd4", steel: "#8a8073", amber: "#b8860b", orange: "#c2900d",
 };
 
 export function LabRolePanel() {

@@ -34,7 +34,7 @@ export function ProcessExplorer() {
                     className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md font-mono text-[11px]"
                     style={{
                       backgroundColor: active ? `${accent.dot}22` : "rgba(255,255,255,0.04)",
-                      color: active ? accent.text : "#9aa4b6",
+                      color: active ? accent.text : "#9a9082",
                     }}
                   >
                     {i + 1}

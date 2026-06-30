@@ -16,10 +16,10 @@ export function MachineViewer({ stationId }: { stationId: StationId }) {
       gl={{ antialias: true }}
       camera={{ position: [6.5, 4.2, 9], fov: 40, near: 0.5, far: 100 }}
     >
-      <color attach="background" args={["#272b33"]} />
-      <fog attach="fog" args={["#272b33", 18, 40]} />
+      <color attach="background" args={["#2a2622"]} />
+      <fog attach="fog" args={["#2a2622", 18, 40]} />
       <ambientLight intensity={0.5} />
-      <hemisphereLight intensity={0.4} color="#cfe0ff" groundColor="#26211a" />
+      <hemisphereLight intensity={0.4} color="#d8c8ef" groundColor="#26211a" />
       <directionalLight
         castShadow
         position={[5, 11, 7]}
@@ -34,11 +34,11 @@ export function MachineViewer({ stationId }: { stationId: StationId }) {
         shadow-camera-bottom={-8}
         shadow-bias={-0.0004}
       />
-      <directionalLight position={[-6, 6, -4]} intensity={0.5} color="#bcd6ff" />
+      <directionalLight position={[-6, 6, -4]} intensity={0.5} color="#d9cdb8" />
       <Suspense fallback={null}>
         <Environment resolution={256}>
           <Lightformer intensity={2.2} position={[0, 7, 6]} scale={[14, 7, 1]} color="#fff3e2" />
-          <Lightformer intensity={1.1} position={[-8, 5, -5]} scale={[8, 6, 1]} color="#bcd6ff" />
+          <Lightformer intensity={1.1} position={[-8, 5, -5]} scale={[8, 6, 1]} color="#d9cdb8" />
           <Lightformer intensity={1.3} form="ring" position={[9, 5, 6]} scale={4} color="#ffd9a8" />
         </Environment>
         <Model active transforming={false} progress={0} done={false} />

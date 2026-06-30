@@ -69,7 +69,7 @@ export function NonconformanceBoard() {
       </div>
 
       {sel && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4 backdrop-blur-sm" onClick={() => setSel(null)}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1f1b17]/40 p-4 backdrop-blur-sm" onClick={() => setSel(null)}>
           <div className="panel-raised w-full max-w-lg p-5" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-start justify-between gap-3">
               <div>

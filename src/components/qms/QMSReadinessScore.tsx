@@ -2,7 +2,7 @@ import { computeQmsReadiness, qmsStatusByClause } from "@/lib/qmsReadinessEngine
 import { statusClass, prettyStatus } from "@/lib/qmsUi";
 import { Gauge, CheckCircle2, AlertTriangle, ArrowRight } from "lucide-react";
 
-const RING: Record<string, string> = { emerging: "#9ea4d6", developing: "#9aa9ff", qualified: "#c3bdff", "audit-ready": "#22c55e" };
+const RING: Record<string, string> = { emerging: "#5a35b0", developing: "#5a35b0", qualified: "#6d3bd4", "audit-ready": "#15803d" };
 
 export function QMSReadinessScore() {
   const r = computeQmsReadiness();
@@ -21,7 +21,7 @@ export function QMSReadinessScore() {
         <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-center">
           <div className="relative h-[112px] w-[112px] shrink-0">
             <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90">
-              <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(199,210,254,0.14)" strokeWidth="8" />
+              <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(109,59,212,0.14)" strokeWidth="8" />
               <circle cx="50" cy="50" r="42" fill="none" stroke={ring} strokeWidth="8" strokeLinecap="round" strokeDasharray={`${circ * r.pct} ${circ}`} style={{ transition: "stroke-dasharray 500ms ease" }} />
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">

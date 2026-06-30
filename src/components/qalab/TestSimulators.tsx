@@ -64,7 +64,7 @@ export function TensileTestSimulator() {
     <SimShell
       title="Tensile / Elongation (UTM)"
       Icon={Maximize2}
-      accent="#2563eb"
+      accent="#6d3bd4"
       onRun={() => setRun((r) => r + 1)}
       badges={["controlled record", "calibration required", "traceable sample"]}
       result={
@@ -86,17 +86,17 @@ export function TensileTestSimulator() {
         {/* stretching dumbbell */}
         <svg viewBox="0 0 160 40" className="mx-auto mb-2 w-full max-w-[150px]">
           <g style={{ transform: armed ? "scaleX(1.7)" : "scaleX(1)", transformOrigin: "80px 20px", transition: "transform 1.6s ease-in" }}>
-            <path d="M20 12 h26 v-5 h6 v26 h-6 v-5 H20 v5 h-6 V12 h6 z M114 12 h26 v-5 h6 v26 h-6 v-5 h-26 v5 h-6 V12 h6 z" fill="#2b3037" />
-            <rect x="46" y="14" width="68" height="12" rx="3" fill="#1a1b1f" />
+            <path d="M20 12 h26 v-5 h6 v26 h-6 v-5 H20 v5 h-6 V12 h6 z M114 12 h26 v-5 h6 v26 h-6 v-5 h-26 v5 h-6 V12 h6 z" fill="#2b2722" />
+            <rect x="46" y="14" width="68" height="12" rx="3" fill="#1b1714" />
           </g>
         </svg>
         <svg viewBox={`0 0 ${SS_W} ${SS_H}`} className="w-full">
-          <line x1={SS_PAD} y1={SS_H - SS_PAD} x2={SS_W - SS_PAD} y2={SS_H - SS_PAD} stroke="rgba(15,23,42,0.20)" />
-          <line x1={SS_PAD} y1={SS_PAD} x2={SS_PAD} y2={SS_H - SS_PAD} stroke="rgba(15,23,42,0.20)" />
-          <text x={SS_PAD} y={SS_H - 8} fill="#64748b" fontFamily="monospace" fontSize="8">strain →</text>
-          <path d={ssD} fill="none" stroke="#2563eb" strokeWidth="2.2" pathLength={1}
+          <line x1={SS_PAD} y1={SS_H - SS_PAD} x2={SS_W - SS_PAD} y2={SS_H - SS_PAD} stroke="rgba(31, 27, 23,0.20)" />
+          <line x1={SS_PAD} y1={SS_PAD} x2={SS_PAD} y2={SS_H - SS_PAD} stroke="rgba(31, 27, 23,0.20)" />
+          <text x={SS_PAD} y={SS_H - 8} fill="#8a8073" fontFamily="monospace" fontSize="8">strain →</text>
+          <path d={ssD} fill="none" stroke="#6d3bd4" strokeWidth="2.2" pathLength={1}
             style={{ strokeDasharray: 1, strokeDashoffset: armed ? 0 : 1, transition: armed ? "stroke-dashoffset 1.8s ease-in" : "none" }} />
-          {armed && <circle cx={SS_PAD + ssPoints[ssPoints.length - 1].x * (SS_W - 2 * SS_PAD)} cy={SS_H - SS_PAD - ssPoints[ssPoints.length - 1].y * (SS_H - 2 * SS_PAD)} r="3.5" fill="#fbbf24" />}
+          {armed && <circle cx={SS_PAD + ssPoints[ssPoints.length - 1].x * (SS_W - 2 * SS_PAD)} cy={SS_H - SS_PAD - ssPoints[ssPoints.length - 1].y * (SS_H - 2 * SS_PAD)} r="3.5" fill="#d8a93a" />}
         </svg>
       </div>
     </SimShell>
@@ -111,7 +111,7 @@ export function HardnessTestSimulator() {
     <SimShell
       title="Durometer hardness"
       Icon={Gauge}
-      accent="#22c55e"
+      accent="#15803d"
       onRun={() => setRun((r) => r + 1)}
       badges={["controlled record", "calibration required"]}
       result={
@@ -129,13 +129,13 @@ export function HardnessTestSimulator() {
       }
     >
       <svg viewBox="0 0 120 110" className="w-full max-w-[120px]">
-        <rect x="50" y="6" width="20" height="10" fill="#36424e" rx="2" />
+        <rect x="50" y="6" width="20" height="10" fill="#393129" rx="2" />
         <g style={{ transform: down ? "translateY(40px)" : "translateY(0)", transition: "transform 1s ease-in-out" }}>
-          <rect x="56" y="16" width="8" height="34" fill="#98a1ab" />
-          <path d="M56 50 l4 8 l4 -8 z" fill="#ced4dc" />
+          <rect x="56" y="16" width="8" height="34" fill="#a89c86" />
+          <path d="M56 50 l4 8 l4 -8 z" fill="#ddd1ba" />
         </g>
-        <rect x="20" y="88" width="80" height="16" rx="3" fill="#1a1b1f" />
-        <text x="60" y="100" fill="#64748b" fontFamily="monospace" fontSize="7" textAnchor="middle">rubber sample</text>
+        <rect x="20" y="88" width="80" height="16" rx="3" fill="#1b1714" />
+        <text x="60" y="100" fill="#8a8073" fontFamily="monospace" fontSize="7" textAnchor="middle">rubber sample</text>
       </svg>
     </SimShell>
   );
@@ -155,7 +155,7 @@ export function CompressionSetSimulator() {
     <SimShell
       title="Compression set"
       Icon={ArrowDownToLine}
-      accent="#f59e0b"
+      accent="#b8860b"
       onRun={() => setRun((r) => r + 1)}
       badges={["controlled record", "traceable sample"]}
       result={
@@ -173,13 +173,13 @@ export function CompressionSetSimulator() {
       }
     >
       <svg viewBox="0 0 120 110" className="w-full max-w-[120px]">
-        <rect x="20" y="8" width="80" height="10" rx="2" fill="#36424e" />
-        <rect x="20" y="92" width="80" height="10" rx="2" fill="#36424e" />
+        <rect x="20" y="8" width="80" height="10" rx="2" fill="#393129" />
+        <rect x="20" y="92" width="80" height="10" rx="2" fill="#393129" />
         {/* specimen: full height 44, base sits on bottom platen (y=92), scales from base */}
         <g style={{ transform: `scaleY(${sy})`, transformOrigin: "60px 92px", transition: "transform 1.1s ease-in-out" }}>
-          <rect x="40" y="48" width="40" height="44" rx="4" fill="#1a1b1f" />
+          <rect x="40" y="48" width="40" height="44" rx="4" fill="#1b1714" />
         </g>
-        <text x="60" y="40" fill="#64748b" fontFamily="monospace" fontSize="7" textAnchor="middle">{phase}</text>
+        <text x="60" y="40" fill="#8a8073" fontFamily="monospace" fontSize="7" textAnchor="middle">{phase}</text>
       </svg>
     </SimShell>
   );

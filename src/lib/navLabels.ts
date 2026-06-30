@@ -34,5 +34,5 @@ export function layerName(id: FactoryLayerId): string {
   return factoryLayersById[id]?.name ?? id;
 }
 export function layerAccent(id: FactoryLayerId): string {
-  return factoryLayersById[id]?.accent ?? "#9ea4d6";
+  return factoryLayersById[id]?.accent ?? "#5a35b0";
 }

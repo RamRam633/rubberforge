@@ -127,7 +127,7 @@ export default function OutputsPage() {
       {/* RFQ + technical review handoffs */}
       <section className="mt-12 grid gap-3 sm:grid-cols-2">
         <div id="rfq-package" className="panel-raised flex flex-col p-5 scroll-mt-20">
-          <FileText className="h-6 w-6 text-[#a855f7]" />
+          <FileText className="h-6 w-6 text-[#6d3bd4]" />
           <h2 className="mt-2 font-display text-[17px] font-semibold text-ink">RFQ package</h2>
           <p className="mt-1.5 flex-1 text-[12.5px] leading-relaxed text-ink-muted">
             Turn a product and material selection into a quote-ready technical package with a completeness score, route,

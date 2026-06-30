@@ -83,13 +83,15 @@ export const machinesById: Record<StationId, Machine> = machines.reduce(
   {} as Record<StationId, Machine>,
 );
 
-// Visual accent per machine family.
+// Visual accent per machine family. `.text` renders on warm-paper surfaces
+// (station labels, timeline numbers, family chips) so it must be a dark,
+// readable family tone; rings/dots are mid family tones.
 export const familyAccent: Record<Machine["family"], { ring: string; text: string; dot: string }> = {
-  intake: { ring: "rgba(148,163,184,0.6)", text: "#cbd5e1", dot: "#94a3b8" },
-  mixing: { ring: "rgba(249,115,22,0.7)", text: "#ffb066", dot: "#f97316" },
-  forming: { ring: "rgba(56,189,248,0.7)", text: "#7dd3fc", dot: "#38bdf8" },
-  curing: { ring: "rgba(249,115,22,0.9)", text: "#ff8c2b", dot: "#ff8c2b" },
-  finishing: { ring: "rgba(125,211,252,0.6)", text: "#9fd8f5", dot: "#7dd3fc" },
-  qa: { ring: "rgba(52,211,153,0.7)", text: "#6ee7b7", dot: "#34d399" },
-  output: { ring: "rgba(52,211,153,0.9)", text: "#34d399", dot: "#34d399" },
+  intake: { ring: "rgba(107,99,86,0.55)", text: "#4a443b", dot: "#8a8073" },
+  mixing: { ring: "rgba(184,134,11,0.6)", text: "#8a6608", dot: "#b8860b" },
+  forming: { ring: "rgba(14,143,168,0.55)", text: "#0e7a8f", dot: "#0e8fa8" },
+  curing: { ring: "rgba(184,134,11,0.75)", text: "#8a6608", dot: "#b8860b" },
+  finishing: { ring: "rgba(14,143,168,0.5)", text: "#0e7a8f", dot: "#0e8fa8" },
+  qa: { ring: "rgba(21,128,61,0.6)", text: "#15803d", dot: "#15803d" },
+  output: { ring: "rgba(21,128,61,0.7)", text: "#15803d", dot: "#15803d" },
 };

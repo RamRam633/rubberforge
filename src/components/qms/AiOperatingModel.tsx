@@ -14,8 +14,8 @@ import type { AiAgent, OmLayer } from "@/types/operatingModel";
 import { Bot, Building2, ShieldCheck, UserCheck, AlertTriangle, FileText, ArrowRight, X, Network, ClipboardList, Database, HelpCircle } from "lucide-react";
 
 const ACCENT: Record<OmLayer, string> = {
-  process: "#d97706", chemistry: "#7c3aed", quality: "#0891b2", "supply-chain": "#0d9488",
-  people: "#16a34a", maintenance: "#ea580c", documentation: "#64748b", rfq: "#9333ea", qms: "#2563eb",
+  process: "#b8860b", chemistry: "#6d3bd4", quality: "#0e8fa8", "supply-chain": "#0d9488",
+  people: "#16a34a", maintenance: "#ea580c", documentation: "#8a8073", rfq: "#6d3bd4", qms: "#6d3bd4",
 };
 
 function layerLabel(l: OmLayer): string {
@@ -155,7 +155,7 @@ export function AiOperatingModel() {
               </div>
               <Row icon={Database} label="Input data used" items={e.inputData} />
               <Row icon={HelpCircle} label="Assumptions" items={e.assumptions} />
-              <Row icon={AlertTriangle} label="Missing information" items={e.missingInformation} tone="#d97706" />
+              <Row icon={AlertTriangle} label="Missing information" items={e.missingInformation} tone="#b8860b" />
               <p className="mt-2 text-[11.5px] leading-relaxed text-ink-muted"><span className="text-ink-faint">Recommendation (demo). </span>{e.recommendation}</p>
               <div className="mt-2 flex flex-wrap items-center gap-1.5">
                 <span className="chip border-pass/40 text-pass"><UserCheck className="h-3 w-3" /> Reviewer: {e.requiredReviewer}</span>
@@ -171,7 +171,7 @@ export function AiOperatingModel() {
   );
 }
 
-function Row({ icon: Icon, label, items, tone = "#9ea4d6" }: { icon: typeof Database; label: string; items: string[]; tone?: string }) {
+function Row({ icon: Icon, label, items, tone = "#5a35b0" }: { icon: typeof Database; label: string; items: string[]; tone?: string }) {
   return (
     <div className="mt-2">
       <span className="flex items-center gap-1.5 label-mono text-[9.5px]" style={{ color: tone }}><Icon className="h-3 w-3" /> {label}</span>
@@ -183,7 +183,7 @@ function Row({ icon: Icon, label, items, tone = "#9ea4d6" }: { icon: typeof Data
 function AgentDetail({ agent, onClose }: { agent: AiAgent; onClose: () => void }) {
   const accent = ACCENT[agent.relatedLayer];
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4 backdrop-blur-sm" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1f1b17]/40 p-4 backdrop-blur-sm" onClick={onClose}>
       <div className="panel-raised max-h-[88vh] w-full max-w-lg overflow-y-auto p-5" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-2.5">

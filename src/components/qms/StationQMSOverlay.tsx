@@ -6,7 +6,7 @@ import type { StationId } from "@/types/simulation";
 import { ShieldCheck, User, FileText, FileCheck2, AlertTriangle, Search, GitBranch, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-const ACCENT = "#9333ea";
+const ACCENT = "#6d3bd4";
 
 export function StationQMSOverlay({ stationId }: { stationId: StationId }) {
   const q = stationQmsById[stationId];
@@ -29,8 +29,8 @@ export function StationQMSOverlay({ stationId }: { stationId: StationId }) {
         <Row icon={FileText} title="Controlled documents" items={q.controlledDocuments} />
         <Row icon={FileCheck2} title="Records generated" items={q.recordsGenerated} />
         <Row icon={Search} title="Verification points" items={q.verificationPoints} />
-        <Row icon={AlertTriangle} title="NCR triggers" items={q.ncrTriggers} tone="#d97706" />
-        <Row icon={GitBranch} title="Traceability records" items={q.traceabilityRecords} tone="#2563eb" />
+        <Row icon={AlertTriangle} title="NCR triggers" items={q.ncrTriggers} tone="#b8860b" />
+        <Row icon={GitBranch} title="Traceability records" items={q.traceabilityRecords} tone="#6d3bd4" />
       </div>
 
       <div className="mt-2.5 rounded-lg border px-3 py-2" style={{ borderColor: `${ACCENT}33`, backgroundColor: `${ACCENT}0d` }}>
@@ -45,7 +45,7 @@ export function StationQMSOverlay({ stationId }: { stationId: StationId }) {
   );
 }
 
-function Row({ icon: Icon, title, items, tone = "#9ea4d6" }: { icon: typeof User; title: string; items: string[]; tone?: string }) {
+function Row({ icon: Icon, title, items, tone = "#5a35b0" }: { icon: typeof User; title: string; items: string[]; tone?: string }) {
   return (
     <div>
       <span className="flex items-center gap-1.5 label-mono text-[9.5px]" style={{ color: tone }}><Icon className="h-3 w-3" /> {title}</span>

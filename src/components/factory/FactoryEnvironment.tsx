@@ -9,7 +9,7 @@ const floorMat = new THREE.MeshStandardMaterial({ color: "#2f3136", roughness: 0
 const laneMat = new THREE.MeshStandardMaterial({ color: "#3c3e44", roughness: 0.9 });
 const lineMat = new THREE.MeshStandardMaterial({ color: "#cdb15a", roughness: 0.7, emissive: "#3a3010", emissiveIntensity: 0.2 });
 const fixtureMat = new THREE.MeshStandardMaterial({ color: "#1a1d22", roughness: 0.6, metalness: 0.5 });
-const panelMat = new THREE.MeshStandardMaterial({ color: "#cfe6ff", emissive: "#aee0ff", emissiveIntensity: 1.5, roughness: 0.4 });
+const panelMat = new THREE.MeshStandardMaterial({ color: "#d6ece8", emissive: "#b6e2ea", emissiveIntensity: 1.5, roughness: 0.4 });
 const silhouetteMat = new THREE.MeshStandardMaterial({ color: "#191c21", roughness: 0.9, metalness: 0.2 });
 
 export function FactoryEnvironment() {
@@ -22,9 +22,9 @@ export function FactoryEnvironment() {
       {/* In-scene reflection environment (no network HDRI) for metal highlights */}
       <Environment resolution={256}>
         <Lightformer intensity={2.2} position={[0, 8, 6]} scale={[20, 8, 1]} color="#fff3e2" />
-        <Lightformer intensity={1.1} position={[-12, 5, -8]} scale={[10, 8, 1]} color="#bcd6ff" />
+        <Lightformer intensity={1.1} position={[-12, 5, -8]} scale={[10, 8, 1]} color="#d9cdb8" />
         <Lightformer intensity={1.4} form="ring" position={[14, 6, 8]} scale={5} color="#ffd9a8" />
-        <Lightformer intensity={0.8} position={[0, 0.5, -14]} scale={[24, 3, 1]} color="#6b7686" />
+        <Lightformer intensity={0.8} position={[0, 0.5, -14]} scale={[24, 3, 1]} color="#7a7062" />
       </Environment>
 
       {/* Concrete floor */}
@@ -82,7 +82,7 @@ export function FactoryEnvironment() {
         <StorageBale position={[0.05, 1.05, 0]} />
       </group>
       <Drum position={[x0 + 1.0, 0.55, 6.6]} color="#7a5a2c" />
-      <Drum position={[x0 + 1.9, 0.55, 6.8]} color="#2b3037" />
+      <Drum position={[x0 + 1.9, 0.55, 6.8]} color="#2b2722" />
 
       {/* Finish end: finished rolls on a pallet */}
       <group position={[x1 - 1.4, 0, 5]}>

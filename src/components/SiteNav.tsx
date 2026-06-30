@@ -42,11 +42,11 @@ export function ForgeMark({ className = "h-7 w-7" }: { className?: string }) {
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
       <defs>
         <linearGradient id="forge-g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#3b82f6" />
-          <stop offset="1" stopColor="#1d4ed8" />
+          <stop offset="0" stopColor="#7a4fd8" />
+          <stop offset="1" stopColor="#5a35b0" />
         </linearGradient>
       </defs>
-      <rect x="3" y="3" width="26" height="26" rx="7" fill="#111827" stroke="rgba(15,23,42,0.18)" />
+      <rect x="3" y="3" width="26" height="26" rx="7" fill="#1f1b17" stroke="rgba(31, 27, 23,0.18)" />
       <circle cx="16" cy="16" r="8.2" fill="none" stroke="url(#forge-g)" strokeWidth="1.6" />
       <circle cx="16" cy="16" r="3.4" fill="url(#forge-g)" />
       <path d="M16 5.6 L16 9.2 M16 22.8 L16 26.4 M5.6 16 L9.2 16 M22.8 16 L26.4 16" stroke="url(#forge-g)" strokeWidth="1.6" strokeLinecap="round" />
@@ -100,7 +100,7 @@ export function SiteNav() {
           <ChevronDown className={`h-3.5 w-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`} />
         </button>
         {isOpen && (
-          <div className="absolute left-0 top-[calc(100%+8px)] w-[290px] overflow-hidden rounded-xl border border-line bg-white p-1.5 shadow-[0_18px_44px_-20px_rgba(16,24,40,0.28)]">
+          <div className="absolute left-0 top-[calc(100%+8px)] w-[290px] overflow-hidden rounded-xl border border-line bg-base-950 p-1.5 shadow-[0_18px_44px_-20px_rgba(31, 27, 23,0.28)]">
             {items.map((l, i) => {
               const active = isActive(l.href);
               return (
@@ -124,7 +124,7 @@ export function SiteNav() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white/85 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-line bg-base-950/85 backdrop-blur-xl">
       <nav className="mx-auto flex h-14 max-w-[1600px] items-center justify-between gap-3 px-4 sm:px-6">
         <Link href="/" className="group flex shrink-0 items-center gap-2.5">
           <ForgeMark />
@@ -182,7 +182,7 @@ export function SiteNav() {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="max-h-[calc(100dvh-3.5rem)] overflow-y-auto overscroll-contain border-t border-line bg-white px-4 py-2 xl:hidden">
+        <div className="max-h-[calc(100dvh-3.5rem)] overflow-y-auto overscroll-contain border-t border-line bg-base-950 px-4 py-2 xl:hidden">
           {[...PRIMARY, ...TRAILING].map((l) => (
             <MobileLink key={l.href} href={l.href} label={l.label} active={isActive(l.href)} onClick={() => setOpen(false)} />
           ))}

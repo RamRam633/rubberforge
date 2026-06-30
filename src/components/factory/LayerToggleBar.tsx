@@ -42,7 +42,7 @@ export function LayerToggleBar({
             style={
               on
                 ? { borderColor: l.accent, backgroundColor: `${l.accent}1f`, color: l.accent }
-                : { borderColor: "rgba(199,210,254,0.18)", color: "#9ea4d6" }
+                : { borderColor: "rgba(109,59,212,0.18)", color: "#5a35b0" }
             }
           >
             <Icon className="h-3.5 w-3.5" style={{ color: l.accent }} />

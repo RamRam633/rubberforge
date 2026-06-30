@@ -36,7 +36,7 @@ export function ProcessTimeline({ state }: { state: SimState }) {
                   style={{
                     backgroundColor:
                       status === "locked" ? "rgba(255,255,255,0.04)" : `${accent.dot}22`,
-                    color: status === "locked" ? "#5d6678" : accent.text,
+                    color: status === "locked" ? "#6b6356" : accent.text,
                     boxShadow: status === "active" ? `0 0 0 1px ${accent.ring}` : "none",
                   }}
                 >

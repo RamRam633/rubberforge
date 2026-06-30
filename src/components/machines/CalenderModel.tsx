@@ -86,7 +86,7 @@ export function CalenderModel({ active, transforming, progress = 0, done }: Mach
 
   // material reveal: cured sheet darker/cleaner, sheet length grows with progress
   const reveal = done ? 1 : transforming ? progress : active ? 0.18 : 0;
-  const sheetColor = done ? "#16171b" : "#1a1b1f";
+  const sheetColor = done ? "#16171b" : "#1b1714";
   const sheetMat = useMemo(
     () => rubberSheetMaterial(sheetColor, 0.42 - reveal * 0.08),
     [sheetColor, reveal],
@@ -286,15 +286,15 @@ export function CalenderModel({ active, transforming, progress = 0, done }: Mach
 }
 
 const gaugeScreenMat = new THREE.MeshStandardMaterial({
-  color: "#06343d",
-  emissive: "#22d3ee",
+  color: "#0a3a44",
+  emissive: "#34b3cc",
   emissiveIntensity: 1.5,
   roughness: 0.22,
 });
 
 const gaugeEyeMat = new THREE.MeshStandardMaterial({
-  color: "#22d3ee",
-  emissive: "#22d3ee",
+  color: "#34b3cc",
+  emissive: "#34b3cc",
   emissiveIntensity: 2.0,
   roughness: 0.3,
 });

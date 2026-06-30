@@ -119,12 +119,12 @@ function SceneContents({
 
   return (
     <>
-      <color attach="background" args={["#272b33"]} />
-      <fog attach="fog" args={["#272b33", 32, 82]} />
+      <color attach="background" args={["#2a2622"]} />
+      <fog attach="fog" args={["#2a2622", 32, 82]} />
 
       <ambientLight intensity={0.6} />
-      <hemisphereLight intensity={0.55} color="#cfe0ff" groundColor="#2a241b" />
-      <directionalLight position={[18, 10, -8]} intensity={0.9} color="#bcd6ff" />
+      <hemisphereLight intensity={0.55} color="#d8c8ef" groundColor="#2a241b" />
+      <directionalLight position={[18, 10, -8]} intensity={0.9} color="#d9cdb8" />
       <MemoKeyLight x={activeX} />
 
       <Suspense fallback={null}>

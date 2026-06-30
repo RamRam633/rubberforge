@@ -12,12 +12,12 @@ type Vec3 = [number, number, number];
 
 // Cleaner, brighter lab materials than the production floor.
 const LAB = {
-  benchTop: new THREE.MeshStandardMaterial({ color: "#c9d2dd", roughness: 0.4, metalness: 0.5 }),
-  white: new THREE.MeshStandardMaterial({ color: "#e8edf4", roughness: 0.6, metalness: 0.1 }),
-  screen: new THREE.MeshStandardMaterial({ color: "#1b2a52", emissive: "#3a5bd0", emissiveIntensity: 0.7, roughness: 0.3 }),
-  amber: new THREE.MeshStandardMaterial({ color: "#f59e0b", emissive: "#f59e0b", emissiveIntensity: 0.5 }),
-  glass: new THREE.MeshStandardMaterial({ color: "#bcd3e6", roughness: 0.05, metalness: 0.1, transparent: true, opacity: 0.35 }),
-  rubber: new THREE.MeshStandardMaterial({ color: "#1a1b1f", roughness: 0.8 }),
+  benchTop: new THREE.MeshStandardMaterial({ color: "#ddd1ba", roughness: 0.4, metalness: 0.5 }),
+  white: new THREE.MeshStandardMaterial({ color: "#ece6dc", roughness: 0.6, metalness: 0.1 }),
+  screen: new THREE.MeshStandardMaterial({ color: "#241f30", emissive: "#5a35b0", emissiveIntensity: 0.7, roughness: 0.3 }),
+  amber: new THREE.MeshStandardMaterial({ color: "#b8860b", emissive: "#b8860b", emissiveIntensity: 0.5 }),
+  glass: new THREE.MeshStandardMaterial({ color: "#d4cdbe", roughness: 0.05, metalness: 0.1, transparent: true, opacity: 0.35 }),
+  rubber: new THREE.MeshStandardMaterial({ color: "#1b1714", roughness: 0.8 }),
 };
 
 function Bench({ position }: { position: Vec3 }) {
@@ -54,12 +54,12 @@ function Instrument({ zoneId, position, active, onSelect, children, label }: { z
         {(active || hover) && (
           <mesh position={[0, -0.02, 0]}>
             <ringGeometry args={[0.85, 0.95, 32]} />
-            <meshBasicMaterial color={active ? "#7c3aed" : "#2563eb"} side={THREE.DoubleSide} transparent opacity={0.8} />
+            <meshBasicMaterial color={active ? "#6d3bd4" : "#6d3bd4"} side={THREE.DoubleSide} transparent opacity={0.8} />
           </mesh>
         )}
       </group>
       <Html position={[0, 2.1, 0]} center distanceFactor={11}>
-        <div className={`pointer-events-none whitespace-nowrap rounded-md border px-2 py-0.5 font-mono text-[10px] ${active ? "border-violet-400 bg-violet-500/20 text-violet-100" : "border-[rgba(199,210,254,0.25)] bg-[#11102b]/80 text-[#c7ccf2]"}`}>
+        <div className={`pointer-events-none whitespace-nowrap rounded-md border px-2 py-0.5 font-mono text-[10px] ${active ? "border-violet-400 bg-violet-500/20 text-violet-100" : "border-[rgba(109,59,212,0.25)] bg-[#1f1b17]/80 text-[#d9cdb8]"}`}>
           {label}
         </div>
       </Html>
@@ -90,22 +90,22 @@ const STATIONS: { id: string; pos: Vec3; node: React.ReactNode }[] = [
 function Scene({ active, onSelect }: { active: string | null; onSelect: (id: string) => void }) {
   return (
     <>
-      <color attach="background" args={["#3a4150"]} />
-      <fog attach="fog" args={["#3a4150", 22, 60]} />
+      <color attach="background" args={["#36302a"]} />
+      <fog attach="fog" args={["#36302a", 22, 60]} />
       <ambientLight intensity={0.85} />
-      <hemisphereLight intensity={0.7} color="#e6edff" groundColor="#2a2660" />
+      <hemisphereLight intensity={0.7} color="#ece6dc" groundColor="#2a2240" />
       <directionalLight position={[6, 12, 6]} intensity={1.4} color="#ffffff" castShadow shadow-mapSize={[1024, 1024]} />
-      <directionalLight position={[-8, 8, -4]} intensity={0.5} color="#bcd6ff" />
+      <directionalLight position={[-8, 8, -4]} intensity={0.5} color="#d9cdb8" />
 
       <Suspense fallback={null}>
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
           <planeGeometry args={[40, 30]} />
-          <meshStandardMaterial color="#3a3c52" roughness={0.9} metalness={0.05} />
+          <meshStandardMaterial color="#36302a" roughness={0.9} metalness={0.05} />
         </mesh>
         {/* lane stripe */}
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.01, 0.15]}>
           <planeGeometry args={[18, 0.12]} />
-          <meshBasicMaterial color="#2563eb" transparent opacity={0.35} />
+          <meshBasicMaterial color="#6d3bd4" transparent opacity={0.35} />
         </mesh>
         {STATIONS.map((s) => (
           <Instrument key={s.id} zoneId={s.id} position={s.pos} active={active === s.id} onSelect={onSelect} label={labStationsById[s.id]?.signText ?? s.id}>

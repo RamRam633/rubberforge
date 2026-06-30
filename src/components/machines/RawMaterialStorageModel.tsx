@@ -128,7 +128,7 @@ export function RawMaterialStorageModel({ active, transforming, done }: MachineM
   );
   // loose black filler heap inside the bin
   const fillerHeap = useMemo(
-    () => new THREE.MeshStandardMaterial({ color: "#16161a", roughness: 0.95, metalness: 0.03, flatShading: true }),
+    () => new THREE.MeshStandardMaterial({ color: "#161310", roughness: 0.95, metalness: 0.03, flatShading: true }),
     [],
   );
   // tan additive sack material

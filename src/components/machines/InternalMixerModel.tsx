@@ -41,7 +41,7 @@ function Rotor({
   spinRef: React.RefObject<THREE.Group>;
 }) {
   const bladeMat = useMemo(
-    () => new THREE.MeshStandardMaterial({ color: "#5a626c", roughness: 0.35, metalness: 0.9 }),
+    () => new THREE.MeshStandardMaterial({ color: "#6b6356", roughness: 0.35, metalness: 0.9 }),
     [],
   );
   return (
@@ -101,7 +101,7 @@ export function InternalMixerModel({ active, transforming, progress = 0, done }:
   // Quantized to a few discrete steps so the material is not rebuilt every frame.
   const batchT = done ? 1 : transforming ? Math.round(progress * 4) / 4 : active ? 0.25 : 0;
   const batchColor = useMemo(() => {
-    const c = new THREE.Color("#2a2a2e").lerp(new THREE.Color("#141418"), THREE.MathUtils.clamp(batchT, 0, 1));
+    const c = new THREE.Color("#2a2a2e").lerp(new THREE.Color("#151210"), THREE.MathUtils.clamp(batchT, 0, 1));
     return `#${c.getHexString()}`;
   }, [batchT]);
 

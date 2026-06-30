@@ -18,6 +18,7 @@ import { FactoryOutputsGrid } from "@/components/brand/FactoryOutputsGrid";
 import { FactoryFlow } from "@/components/brand/FactoryFlow";
 import { DigitalThreadVisual } from "@/components/brand/DigitalThreadVisual";
 import { FactoryHeroVisual } from "@/components/brand/FactoryHeroVisual";
+import { FactoryFlowFieldLazy } from "@/components/brand/FactoryFlowFieldLazy";
 import { DigitalTwinMaturity } from "@/components/brand/DigitalTwinMaturity";
 import { aiAgents } from "@/lib/aiAgents";
 import { OM_HOME_TITLE, OM_HOME_INTRO, HUMAN_ACCOUNTABILITY_LINE } from "@/lib/operatingModelCopy";
@@ -64,7 +65,22 @@ export default function HomePage() {
   return (
     <div className="mx-auto max-w-[1200px] px-5 pb-14 pt-10 sm:pt-14">
       {/* Hero */}
-      <section className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+      <section className="relative isolate">
+        {/* interactive factory flow field, full-bleed behind the hero */}
+        <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[150%] w-screen -translate-x-1/2 -translate-y-1/2 overflow-hidden">
+          <FactoryFlowFieldLazy />
+          {/* fade the flow into the paper so the headline and visual stay crisp */}
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(54% 52% at 33% 46%, rgba(245,241,232,0.84), rgba(245,241,232,0.2) 64%, transparent 82%)," +
+                "radial-gradient(125% 108% at 50% 42%, transparent 46%, rgba(245,241,232,0.5) 84%, #f5f1e8 100%)",
+            }}
+          />
+        </div>
+        <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <div className="flex flex-wrap items-center gap-2">
             <span className="kicker">Virtual rubber factory</span>
@@ -100,6 +116,7 @@ export default function HomePage() {
           </div>
         </div>
         <FactoryHeroVisual />
+        </div>
       </section>
 
       {/* A. The virtual factory */}

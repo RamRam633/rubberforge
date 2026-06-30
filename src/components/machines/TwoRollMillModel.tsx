@@ -83,11 +83,11 @@ export function TwoRollMillModel({ active, transforming, progress = 0, done }: M
   const stage = done ? "done" : transforming ? "run" : active ? "on" : "off";
   const bandMat = useMemo(() => {
     const r = stage === "done" ? 0.58 : stage === "run" ? 0.7 : 0.78;
-    return rubberSheetMaterial("#141418", r);
+    return rubberSheetMaterial("#151210", r);
   }, [stage]);
   const exitMat = useMemo(() => {
     const r = stage === "done" ? 0.35 : stage === "run" ? 0.42 : 0.5;
-    return rubberSheetMaterial("#1a1b1f", r);
+    return rubberSheetMaterial("#1b1714", r);
   }, [stage]);
 
   return (

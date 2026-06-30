@@ -52,7 +52,7 @@ export function InspectionStationModel({ active, transforming, progress = 0, don
   // Coupon colour: a clean finished cured sheet, getting slightly cleaner/darker
   // as inspection completes.
   const couponMat = useMemo(
-    () => rubberSheetMaterial(done ? "#15161a" : "#1a1b1f", 0.42 - progress * 0.1),
+    () => rubberSheetMaterial(done ? "#15161a" : "#1b1714", 0.42 - progress * 0.1),
     [done, progress],
   );
 
@@ -177,9 +177,9 @@ export function InspectionStationModel({ active, transforming, progress = 0, don
           <boxGeometry args={[0.26, 0.2, 0.26]} />
         </mesh>
         {/* emissive measuring spot / laser dot facing down */}
-        <IndicatorLight position={[0, -1.24, 0]} color="#38bdf8" on={on} r={0.05} />
+        <IndicatorLight position={[0, -1.24, 0]} color="#2ba6c4" on={on} r={0.05} />
         {/* status light on the carriage */}
-        <IndicatorLight position={[0, 0.18, 0.18]} color={on ? "#38bdf8" : "#1b2730"} on={on} r={0.035} />
+        <IndicatorLight position={[0, 0.18, 0.18]} color={on ? "#2ba6c4" : "#1f1814"} on={on} r={0.035} />
       </group>
 
       {/* ── Overhead inspection lamp on a jointed arm ────────────────── */}
@@ -226,7 +226,7 @@ export function InspectionStationModel({ active, transforming, progress = 0, don
         <mesh position={[-0.06, BENCH_TOP_Y + 0.95, 0.12]} rotation={[Math.PI / 2, 0, 0]} material={MAT.polished}>
           <cylinderGeometry args={[0.13, 0.13, 0.04, 20]} />
         </mesh>
-        <IndicatorLight position={[-0.06, BENCH_TOP_Y + 0.95, 0.15]} color="#38bdf8" on={on} r={0.03} />
+        <IndicatorLight position={[-0.06, BENCH_TOP_Y + 0.95, 0.15]} color="#2ba6c4" on={on} r={0.03} />
         {/* descending probe assembly that dips to touch the coupon */}
         <group ref={probe} position={[-0.06, BENCH_TOP_Y + 0.74, -0.06]}>
           <mesh position={[0, 0, 0]} material={MAT.lightSteel} castShadow>

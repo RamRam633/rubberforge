@@ -12,13 +12,13 @@ type Vec3 = [number, number, number];
 // per-instance via the `color` prop on RubberSheet / RubberLump.
 export const MAT = {
   floor: new THREE.MeshStandardMaterial({ color: "#313338", roughness: 0.96, metalness: 0.04 }),
-  bodyPaint: new THREE.MeshStandardMaterial({ color: "#36424e", roughness: 0.5, metalness: 0.55 }),
+  bodyPaint: new THREE.MeshStandardMaterial({ color: "#393129", roughness: 0.5, metalness: 0.55 }),
   bodyPaintDark: new THREE.MeshStandardMaterial({ color: "#232a31", roughness: 0.55, metalness: 0.6 }),
-  frameSteel: new THREE.MeshStandardMaterial({ color: "#2b3037", roughness: 0.42, metalness: 0.85 }),
-  lightSteel: new THREE.MeshStandardMaterial({ color: "#98a1ab", roughness: 0.34, metalness: 0.82 }),
-  polished: new THREE.MeshStandardMaterial({ color: "#ced4dc", roughness: 0.13, metalness: 1 }),
-  darkPolished: new THREE.MeshStandardMaterial({ color: "#7e858f", roughness: 0.2, metalness: 1 }),
-  rubberMatte: new THREE.MeshStandardMaterial({ color: "#141418", roughness: 0.9, metalness: 0.04 }),
+  frameSteel: new THREE.MeshStandardMaterial({ color: "#2b2722", roughness: 0.42, metalness: 0.85 }),
+  lightSteel: new THREE.MeshStandardMaterial({ color: "#a89c86", roughness: 0.34, metalness: 0.82 }),
+  polished: new THREE.MeshStandardMaterial({ color: "#ddd1ba", roughness: 0.13, metalness: 1 }),
+  darkPolished: new THREE.MeshStandardMaterial({ color: "#8a8073", roughness: 0.2, metalness: 1 }),
+  rubberMatte: new THREE.MeshStandardMaterial({ color: "#151210", roughness: 0.9, metalness: 0.04 }),
   safety: new THREE.MeshStandardMaterial({ color: "#e2a629", roughness: 0.5, metalness: 0.25 }),
   hazardRed: new THREE.MeshStandardMaterial({ color: "#cf3a2c", roughness: 0.5, metalness: 0.3 }),
   beige: new THREE.MeshStandardMaterial({ color: "#e3d9c2", roughness: 0.82, metalness: 0.03 }),
@@ -31,12 +31,12 @@ export const MAT = {
     opacity: 0.34,
   }),
   copper: new THREE.MeshStandardMaterial({ color: "#b07a45", roughness: 0.4, metalness: 0.85 }),
-  coolant: new THREE.MeshStandardMaterial({ color: "#3f6b86", roughness: 0.4, metalness: 0.7 }),
+  coolant: new THREE.MeshStandardMaterial({ color: "#2f6478", roughness: 0.4, metalness: 0.7 }),
   amber: new THREE.MeshStandardMaterial({ color: "#c8922e", roughness: 0.3, metalness: 0.1 }),
   concreteLight: new THREE.MeshStandardMaterial({ color: "#3a3c41", roughness: 0.95, metalness: 0.03 }),
 };
 
-export function rubberSheetMaterial(color = "#1a1b1f", roughness = 0.5) {
+export function rubberSheetMaterial(color = "#1b1714", roughness = 0.5) {
   return new THREE.MeshStandardMaterial({ color, roughness, metalness: 0.16 });
 }
 
@@ -241,15 +241,15 @@ export function ControlPanel({
       {/* buttons */}
       <IndicatorLight position={[-0.22, 0.66, 0.21]} color="#34d399" on={on} />
       <IndicatorLight position={[-0.04, 0.66, 0.21]} color="#ff8c2b" on={on} />
-      <IndicatorLight position={[0.14, 0.66, 0.21]} color="#38bdf8" on={on} />
+      <IndicatorLight position={[0.14, 0.66, 0.21]} color="#2ba6c4" on={on} />
       <EStop position={[0.22, 0.4, 0.21]} />
     </group>
   );
 }
 
 const screenMat = new THREE.MeshStandardMaterial({
-  color: "#0a2734",
-  emissive: "#0e3a4d",
+  color: "#0a313a",
+  emissive: "#0e4555",
   emissiveIntensity: 0.8,
   roughness: 0.2,
 });
@@ -355,7 +355,7 @@ export function RubberSheet({
   position = [0, 0, 0],
   rotation = [0, 0, 0],
   size = [3, 0.05, 1.6],
-  color = "#1a1b1f",
+  color = "#1b1714",
   roughness = 0.5,
 }: {
   position?: Vec3;
@@ -376,7 +376,7 @@ export function RubberSheet({
 export function RubberLump({
   position = [0, 0, 0],
   radius = 0.5,
-  color = "#16161a",
+  color = "#161310",
 }: {
   position?: Vec3;
   radius?: number;
@@ -393,7 +393,7 @@ export function RubberLump({
   );
 }
 
-export function Drum({ position, color = "#2b3037" }: { position: Vec3; color?: string }) {
+export function Drum({ position, color = "#2b2722" }: { position: Vec3; color?: string }) {
   const mat = useMemo(() => new THREE.MeshStandardMaterial({ color, roughness: 0.5, metalness: 0.6 }), [color]);
   return (
     <group position={position}>

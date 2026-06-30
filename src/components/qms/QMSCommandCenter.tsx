@@ -109,7 +109,7 @@ export function QMSCommandCenter() {
                         onClick={() => setTab(t.id)}
                         aria-current={on}
                         className={`flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg px-2.5 py-1.5 text-left text-[12.5px] transition ${
-                          on ? "bg-violet-500/15 text-violet-200 shadow-[0_0_0_1px_rgba(139,127,255,0.3)]" : "text-ink-muted hover:bg-base-800/60 hover:text-ink"
+                          on ? "bg-violet-500/15 text-violet-200 shadow-[0_0_0_1px_rgba(109,59,212,0.3)]" : "text-ink-muted hover:bg-base-800/60 hover:text-ink"
                         }`}
                       >
                         <Icon className="h-3.5 w-3.5 shrink-0" /> {t.label}

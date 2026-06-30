@@ -20,7 +20,7 @@ export const factoryOutputs: FactoryOutput[] = [
     "actionLabel": "Open RFQ builder",
     "href": "/quote",
     "icon": "file-text",
-    "accent": "#a855f7"
+    "accent": "#6d3bd4"
   },
   {
     "id": "factory-audit",
@@ -42,7 +42,7 @@ export const factoryOutputs: FactoryOutput[] = [
     "actionLabel": "Run factory audit",
     "href": "/outputs#factory-audit",
     "icon": "clipboard-check",
-    "accent": "#6b6ff6"
+    "accent": "#6d3bd4"
   },
   {
     "id": "quality-plan",
@@ -64,7 +64,7 @@ export const factoryOutputs: FactoryOutput[] = [
     "actionLabel": "Build inspection plan",
     "href": "/outputs#quality-plan",
     "icon": "shield-check",
-    "accent": "#5d75f0"
+    "accent": "#6d3bd4"
   },
   {
     "id": "bill-of-process",
@@ -86,7 +86,7 @@ export const factoryOutputs: FactoryOutput[] = [
     "actionLabel": "Generate bill of process",
     "href": "/outputs#bill-of-process",
     "icon": "list-ordered",
-    "accent": "#8b7fff"
+    "accent": "#7a4fd8"
   },
   {
     "id": "traceability-report",
@@ -108,7 +108,7 @@ export const factoryOutputs: FactoryOutput[] = [
     "actionLabel": "View traceability chain",
     "href": "/outputs#traceability-report",
     "icon": "git-branch",
-    "accent": "#2dd4bf"
+    "accent": "#0d9488"
   },
   {
     "id": "technical-review",
@@ -131,6 +131,6 @@ export const factoryOutputs: FactoryOutput[] = [
     "actionLabel": "Open technical review",
     "href": "/quote",
     "icon": "scroll-text",
-    "accent": "#94a3b8"
+    "accent": "#8a8073"
   }
 ];

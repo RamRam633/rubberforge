@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 import type { ProcessLogEntry } from "@/types/simulation";
 
 const KIND_STYLE: Record<ProcessLogEntry["kind"], { dot: string; text: string; tag: string }> = {
-  info: { dot: "#5d6678", text: "text-ink-muted", tag: "LOG" },
-  action: { dot: "#38bdf8", text: "text-steel-300", tag: "ACT" },
+  info: { dot: "#6b6356", text: "text-ink-muted", tag: "LOG" },
+  action: { dot: "#2ba6c4", text: "text-steel-300", tag: "ACT" },
   transform: { dot: "#f97316", text: "text-molten-300", tag: "XFM" },
   alert: { dot: "#f87171", text: "text-fail", tag: "ALR" },
   success: { dot: "#34d399", text: "text-pass", tag: "OK " },

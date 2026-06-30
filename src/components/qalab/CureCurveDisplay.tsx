@@ -35,17 +35,17 @@ export function CureCurveDisplay({ runKey = 0 }: { runKey?: number }) {
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full">
         {/* grid */}
         {[0.25, 0.5, 0.75].map((g) => (
-          <line key={`h${g}`} x1={PAD} y1={py(g)} x2={W - PAD} y2={py(g)} stroke="rgba(199,210,254,0.08)" />
+          <line key={`h${g}`} x1={PAD} y1={py(g)} x2={W - PAD} y2={py(g)} stroke="rgba(109,59,212,0.08)" />
         ))}
         {/* axes */}
-        <line x1={PAD} y1={H - PAD} x2={W - PAD} y2={H - PAD} stroke="rgba(199,210,254,0.25)" />
-        <line x1={PAD} y1={PAD} x2={PAD} y2={H - PAD} stroke="rgba(199,210,254,0.25)" />
-        <text x={PAD} y={H - 10} fill="#9ea4d6" fontFamily="monospace" fontSize="9">time →</text>
-        <text x={8} y={PAD + 4} fill="#9ea4d6" fontFamily="monospace" fontSize="9" transform={`rotate(-90 12 ${H / 2})`}>torque</text>
+        <line x1={PAD} y1={H - PAD} x2={W - PAD} y2={H - PAD} stroke="rgba(109,59,212,0.25)" />
+        <line x1={PAD} y1={PAD} x2={PAD} y2={H - PAD} stroke="rgba(109,59,212,0.25)" />
+        <text x={PAD} y={H - 10} fill="#5a35b0" fontFamily="monospace" fontSize="9">time →</text>
+        <text x={8} y={PAD + 4} fill="#5a35b0" fontFamily="monospace" fontSize="9" transform={`rotate(-90 12 ${H / 2})`}>torque</text>
 
         {/* marker guides */}
         {mdrCurveMarkers.map((m) => (
-          <line key={m.id} x1={px(m.x)} y1={PAD} x2={px(m.x)} y2={H - PAD} stroke="rgba(245,158,11,0.25)" strokeDasharray="3 3" />
+          <line key={m.id} x1={px(m.x)} y1={PAD} x2={px(m.x)} y2={H - PAD} stroke="rgba(184, 134, 11,0.25)" strokeDasharray="3 3" />
         ))}
 
         {/* curve */}
@@ -53,7 +53,7 @@ export function CureCurveDisplay({ runKey = 0 }: { runKey?: number }) {
           ref={pathRef}
           d={d}
           fill="none"
-          stroke="#f59e0b"
+          stroke="#b8860b"
           strokeWidth="2.4"
           strokeLinecap="round"
           pathLength={1}
@@ -66,7 +66,7 @@ export function CureCurveDisplay({ runKey = 0 }: { runKey?: number }) {
         {/* marker dots */}
         {mdrCurveMarkers.map((m) => {
           const pt = mdrCurvePoints.reduce((a, b) => (Math.abs(b.t - m.x) < Math.abs(a.t - m.x) ? b : a));
-          return <circle key={m.id} cx={px(pt.t)} cy={py(pt.v)} r="3.2" fill="#fbbf24" stroke="#111827" strokeWidth="1.5" />;
+          return <circle key={m.id} cx={px(pt.t)} cy={py(pt.v)} r="3.2" fill="#d8a93a" stroke="#1f1b17" strokeWidth="1.5" />;
         })}
       </svg>
       <div className="mt-1 flex flex-wrap gap-1.5 px-1">

@@ -9,14 +9,14 @@ import { Check, AlertTriangle, X, Droplets, Sun, Wind, Thermometer, FlaskRound }
 // cyan = QA / measurement / digital thread, amber = cure / active process,
 // green/amber/red = compatibility good / caution / poor.
 export const CHEM = {
-  chemistry: "#7c3aed",
-  crosslink: "#7c3aed",
-  cure: "#d97706",
-  qa: "#0891b2",
+  chemistry: "#6d3bd4",
+  crosslink: "#6d3bd4",
+  cure: "#b8860b",
+  qa: "#0e8fa8",
   good: "#16a34a",
-  caution: "#d97706",
+  caution: "#b8860b",
   poor: "#dc2626",
-  neutral: "#64748b",
+  neutral: "#8a8073",
 } as const;
 
 export function bandTone(band: Band): { color: string; label: string; level: number } {
@@ -63,7 +63,7 @@ export function CureCurveMini({ width = 66, height = 24, color = CHEM.cure, clas
     .join(" ");
   return (
     <svg viewBox={`0 0 ${width} ${height}`} width={width} height={height} className={className} aria-label="Conceptual cure curve" role="img">
-      <line x1={pad} y1={height - pad} x2={width - pad} y2={height - pad} stroke="rgba(15,23,42,0.18)" strokeWidth="0.8" />
+      <line x1={pad} y1={height - pad} x2={width - pad} y2={height - pad} stroke="rgba(31, 27, 23,0.18)" strokeWidth="0.8" />
       <path d={d} fill="none" stroke={color} strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   );
@@ -158,7 +158,7 @@ export function ResistanceBar({ band }: { band: Band }) {
   return (
     <span className="inline-flex gap-0.5" aria-label={t.label}>
       {[1, 2, 3, 4].map((n) => (
-        <span key={n} className="h-1.5 w-3 rounded-sm" style={{ backgroundColor: n <= t.level ? t.color : "rgba(199,210,254,0.14)" }} />
+        <span key={n} className="h-1.5 w-3 rounded-sm" style={{ backgroundColor: n <= t.level ? t.color : "rgba(109,59,212,0.14)" }} />
       ))}
     </span>
   );

@@ -8,9 +8,9 @@ import type { ProcessGroup, QmsProcess } from "@/types/qms";
 import { Workflow, ArrowRight, User, X } from "lucide-react";
 
 const GROUPS: { id: ProcessGroup; label: string; desc: string; accent: string }[] = [
-  { id: "core", label: "Core processes", desc: "Customer requirement to delivery", accent: "#d97706" },
-  { id: "support", label: "Support processes", desc: "Document control, calibration, audit, CAPA", accent: "#2563eb" },
-  { id: "management", label: "Management processes", desc: "Policy, objectives, risk, context", accent: "#7c3aed" },
+  { id: "core", label: "Core processes", desc: "Customer requirement to delivery", accent: "#b8860b" },
+  { id: "support", label: "Support processes", desc: "Document control, calibration, audit, CAPA", accent: "#6d3bd4" },
+  { id: "management", label: "Management processes", desc: "Policy, objectives, risk, context", accent: "#6d3bd4" },
 ];
 
 export function QMSProcessMap() {
@@ -56,7 +56,7 @@ export function QMSProcessMap() {
       </div>
 
       {sel && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4 backdrop-blur-sm" onClick={() => setSel(null)}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1f1b17]/40 p-4 backdrop-blur-sm" onClick={() => setSel(null)}>
           <div className="panel-raised w-full max-w-lg p-5" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-start justify-between gap-3">
               <div className="flex items-center gap-2">

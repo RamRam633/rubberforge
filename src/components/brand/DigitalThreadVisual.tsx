@@ -4,15 +4,15 @@ import { Bot, User, FileText, ArrowRight } from "lucide-react";
 
 // Chemistry-aware layer accents for the thread.
 const ACCENT: Record<OmLayer, string> = {
-  process: "#d97706",
-  chemistry: "#7c3aed",
-  quality: "#0891b2",
+  process: "#b8860b",
+  chemistry: "#6d3bd4",
+  quality: "#0e8fa8",
   "supply-chain": "#0d9488",
   people: "#16a34a",
   maintenance: "#ea580c",
-  documentation: "#64748b",
-  rfq: "#9333ea",
-  qms: "#2563eb",
+  documentation: "#8a8073",
+  rfq: "#6d3bd4",
+  qms: "#6d3bd4",
 };
 
 /**

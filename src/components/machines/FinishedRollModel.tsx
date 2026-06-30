@@ -32,7 +32,7 @@ function WoundRoll({
   length = ROLL_LEN,
   radius = ROLL_R,
   spinRef,
-  color = "#141418",
+  color = "#151210",
   shrink = false,
 }: {
   position?: [number, number, number];
@@ -160,7 +160,7 @@ export function FinishedRollModel({ active, transforming, progress = 0, done }: 
   });
 
   // Cured finished sheet: slightly darker / cleaner as it nears completion.
-  const rollColor = done ? "#101116" : transforming ? "#141418" : "#16171c";
+  const rollColor = done ? "#101116" : transforming ? "#151210" : "#16171c";
   const on = active || transforming;
   const greenOn = !!done;
 
@@ -222,7 +222,7 @@ export function FinishedRollModel({ active, transforming, progress = 0, done }: 
         </mesh>
         <IndicatorLight position={[-0.09, 0, 0.06]} color="#34d399" on={greenOn} r={0.04} />
         <IndicatorLight position={[0.02, 0, 0.06]} color="#ff8c2b" on={on && !done} r={0.04} />
-        <IndicatorLight position={[0.11, 0, 0.06]} color="#38bdf8" on={on} r={0.04} />
+        <IndicatorLight position={[0.11, 0, 0.06]} color="#2ba6c4" on={on} r={0.04} />
       </group>
 
       {/* yellow safety railing along the operator side */}

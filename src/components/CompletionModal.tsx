@@ -36,7 +36,7 @@ export function CompletionModal({
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#1f1b17]/40 p-4 backdrop-blur-sm"
     >
       <motion.div
         initial={{ scale: 0.94, opacity: 0, y: 12 }}
