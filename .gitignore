@@ -27,3 +27,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+
+# marketing video capture output (large binaries)
+/marketing-video-output

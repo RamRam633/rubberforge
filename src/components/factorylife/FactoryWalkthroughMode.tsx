@@ -39,7 +39,11 @@ export function FactoryWalkthroughMode() {
         ))}
       </div>
 
-      <div className="p-5">
+      {/* Mobile: reserve a stable min-height and pin the controls to the bottom so
+          the Next/Previous buttons never move between chapters (chapters wrap to
+          different line counts on narrow screens, which made the page jump on each
+          Next). Desktop is already constant-height, so it keeps min-h-0. */}
+      <div className="flex min-h-[915px] flex-col p-5 sm:min-h-0">
         <div className="flex items-center gap-2">
           <Film className="h-4 w-4 text-violet-300" />
           <span className="label-mono text-[10px] text-violet-300">
@@ -69,7 +73,11 @@ export function FactoryWalkthroughMode() {
           </div>
         </div>
 
-        <div className="mt-4 flex items-center justify-between">
+        {/* flex spacer: pins the controls to the bottom of the reserved height on
+            mobile; collapses to a 16px gap on desktop (min-h-0 parent). */}
+        <div className="min-h-4 flex-1" aria-hidden />
+
+        <div className="flex items-center justify-between">
           <button onClick={() => setI((v) => Math.max(0, v - 1))} disabled={i === 0} className="btn-ghost text-[12px]">
             <ChevronLeft className="h-3.5 w-3.5" /> Previous
           </button>
