@@ -12,9 +12,13 @@ const KIND_STYLE: Record<ProcessLogEntry["kind"], { dot: string; text: string; t
 };
 
 export function ProcessLog({ log }: { log: ProcessLogEntry[] }) {
-  const endRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    // Auto-scroll ONLY this log's own container to the latest entry. Never use
+    // scrollIntoView here: it scrolls every scrollable ancestor including the
+    // page, which yanked the whole phone viewport down on every action.
+    const el = scrollRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
   }, [log]);
 
   return (
@@ -23,7 +27,10 @@ export function ProcessLog({ log }: { log: ProcessLogEntry[] }) {
         <span className="label-mono">Process Log</span>
         <span className="font-mono text-[10px] text-ink-faint">{log.length} events</span>
       </div>
-      <div className="min-h-0 flex-1 space-y-1 overflow-y-auto pr-1 font-mono text-[11px] leading-relaxed">
+      <div
+        ref={scrollRef}
+        className="min-h-0 flex-1 space-y-1 overflow-y-auto overscroll-contain pr-1 font-mono text-[11px] leading-relaxed"
+      >
         {log.map((e) => {
           const s = KIND_STYLE[e.kind];
           return (
@@ -35,7 +42,6 @@ export function ProcessLog({ log }: { log: ProcessLogEntry[] }) {
             </div>
           );
         })}
-        <div ref={endRef} />
       </div>
     </div>
   );
