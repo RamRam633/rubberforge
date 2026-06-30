@@ -17,22 +17,19 @@ export function ProcessTimeline({ state }: { state: SimState }) {
         {processSteps.map((step, i) => {
           const status = stepStatus(state, step.id);
           const accent = familyAccent[machinesById[step.id].family];
-          const isActiveTransforming = status === "active" && state.transforming;
           return (
             <li key={step.id} className="flex min-w-0 flex-1 items-center gap-1.5">
               <div
                 className={`relative flex min-w-[88px] flex-1 flex-col items-center gap-1 rounded-lg border px-2 py-2 transition ${
                   status === "active"
-                    ? "border-line-strong bg-base-700"
+                    ? "border-line-strong bg-base-700 pulse-cure"
                     : status === "done"
                       ? "border-line bg-base-800/60"
                       : "border-line/60 bg-base-850/40"
                 }`}
               >
                 <span
-                  className={`flex h-6 w-6 items-center justify-center rounded-full font-mono text-[11px] ${
-                    isActiveTransforming ? "animate-pulse-glow" : ""
-                  }`}
+                  className="flex h-6 w-6 items-center justify-center rounded-full font-mono text-[11px]"
                   style={{
                     backgroundColor:
                       status === "locked" ? "rgba(255,255,255,0.04)" : `${accent.dot}22`,
@@ -55,8 +52,8 @@ export function ProcessTimeline({ state }: { state: SimState }) {
               </div>
               {i < processSteps.length - 1 && (
                 <span
-                  className={`h-px w-3 shrink-0 ${
-                    state.completedSteps.includes(step.id) ? "bg-molten-500/60" : "bg-line"
+                  className={`h-[2px] w-3 shrink-0 rounded-full ${
+                    state.completedSteps.includes(step.id) ? "flow-stream bg-molten-500/40" : "bg-line"
                   }`}
                 />
               )}

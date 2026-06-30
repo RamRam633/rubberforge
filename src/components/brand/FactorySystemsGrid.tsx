@@ -38,10 +38,10 @@ export function FactorySystemsGrid({ compact = false }: { compact?: boolean }) {
         const Icon = ICONS[s.icon];
         const accent = layerAccent(s.linkedLayer);
         return (
-          <div key={s.id} className="panel flex flex-col p-4">
+          <div key={s.id} className="interactive-card group flex flex-col p-4">
             <div className="flex items-center gap-2.5">
               <span
-                className="flex h-9 w-9 items-center justify-center rounded-lg border"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border transition duration-200 group-hover:scale-105"
                 style={{ borderColor: `${accent}44`, backgroundColor: `${accent}18` }}
               >
                 <Icon className="h-4.5 w-4.5" style={{ color: accent }} />
@@ -58,7 +58,7 @@ export function FactorySystemsGrid({ compact = false }: { compact?: boolean }) {
 
             <div className="mt-3 flex flex-wrap items-center gap-1.5">
               <span
-                className="chip"
+                className="chip transition duration-200 group-hover:-translate-y-px"
                 style={{ borderColor: `${accent}55`, color: accent }}
                 title="Maps to this layer in the command center"
               >

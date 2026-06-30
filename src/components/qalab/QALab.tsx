@@ -74,7 +74,7 @@ export function QALab() {
             click an instrument · drag to orbit
           </div>
         </div>
-        <div className="panel p-4">
+        <div key={zone ?? "none"} className="qa-scan-pulse panel overflow-hidden p-4">
           {z ? (
             <>
               <span className="inline-block rounded border border-line bg-base-950/50 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-violet-300">{z.signText}</span>

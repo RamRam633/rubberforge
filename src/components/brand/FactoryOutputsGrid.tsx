@@ -27,10 +27,10 @@ const ICONS: Record<FactoryOutput["icon"], LucideIcon> = {
 export function FactoryOutputCard({ output }: { output: FactoryOutput }) {
   const Icon = ICONS[output.icon];
   return (
-    <div className="panel flex h-full flex-col p-4">
+    <div className="interactive-card group flex h-full flex-col p-4">
       <div className="flex items-start justify-between gap-2">
         <span
-          className="flex h-10 w-10 items-center justify-center rounded-lg border"
+          className="flex h-10 w-10 items-center justify-center rounded-lg border transition duration-200 group-hover:scale-105"
           style={{ borderColor: `${output.accent}44`, backgroundColor: `${output.accent}18` }}
         >
           <Icon className="h-5 w-5" style={{ color: output.accent }} />
@@ -62,7 +62,11 @@ export function FactoryOutputCard({ output }: { output: FactoryOutput }) {
         <span className="label-mono text-[9.5px] text-ink-faint">Pulls from layers</span>
         <div className="mt-1.5 flex flex-wrap gap-1.5">
           {output.pullsFromLayers.map((l) => (
-            <span key={l} className="chip" style={{ borderColor: `${layerAccent(l)}55`, color: layerAccent(l) }}>
+            <span
+              key={l}
+              className="chip transition duration-200 group-hover:-translate-y-px"
+              style={{ borderColor: `${layerAccent(l)}55`, color: layerAccent(l) }}
+            >
               {layerName(l)}
             </span>
           ))}
@@ -74,7 +78,7 @@ export function FactoryOutputCard({ output }: { output: FactoryOutput }) {
         className="btn-ghost mt-4 w-full justify-center text-[13px]"
         style={{ borderColor: `${output.accent}55` }}
       >
-        {output.actionLabel} <ArrowRight className="h-4 w-4" />
+        {output.actionLabel} <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
       </Link>
     </div>
   );

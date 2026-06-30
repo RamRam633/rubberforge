@@ -27,8 +27,8 @@ export function DigitalThreadVisual({ compact = false }: { compact?: boolean }) 
         {qmsDigitalThread.map((n, i) => (
           <span key={n.id} className="flex items-center gap-1.5">
             <span
-              className="rounded-md border px-2 py-1 text-[11px]"
-              style={{ borderColor: `${ACCENT[n.relatedLayer]}55`, color: ACCENT[n.relatedLayer] }}
+              className="thread-pulse rounded-md border px-2 py-1 text-[11px]"
+              style={{ borderColor: `${ACCENT[n.relatedLayer]}55`, color: ACCENT[n.relatedLayer], ["--thread-delay" as string]: `${i * 0.32}s` }}
             >
               {n.label}
             </span>
@@ -45,11 +45,11 @@ export function DigitalThreadVisual({ compact = false }: { compact?: boolean }) 
         {qmsDigitalThread.map((n, i) => {
           const accent = ACCENT[n.relatedLayer];
           return (
-            <div key={n.id} className="relative rounded-xl border border-line bg-base-850/40 p-3">
+            <div key={n.id} className="group relative rounded-xl border border-line bg-base-850/40 p-3 transition hover:border-line-strong hover:bg-base-800/50">
               <div className="flex items-center gap-2">
                 <span
-                  className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border font-mono text-[10px]"
-                  style={{ borderColor: `${accent}66`, color: accent, backgroundColor: `${accent}14` }}
+                  className="thread-pulse flex h-6 w-6 shrink-0 items-center justify-center rounded-full border font-mono text-[10px]"
+                  style={{ borderColor: `${accent}66`, color: accent, backgroundColor: `${accent}14`, ["--thread-delay" as string]: `${i * 0.3}s` }}
                 >
                   {i + 1}
                 </span>

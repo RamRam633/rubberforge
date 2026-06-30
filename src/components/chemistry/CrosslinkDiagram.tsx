@@ -31,9 +31,24 @@ export function CrosslinkDiagram({
             strokeWidth="2.4"
             strokeLinecap="round"
           />
-          {Array.from({ length: 9 }).map((_, n) => (
-            <circle key={n} cx={26 + n * 24} cy={y + (n % 2 ? -4 : 4)} r="3" fill="#3a342c" stroke="#6b6356" strokeWidth="1" />
-          ))}
+          {Array.from({ length: 9 }).map((_, n) => {
+            // Uncured chains read as inert (no drift); otherwise animate every
+            // other bead so the 4-up row never crowds with particles.
+            const animate = density !== "none" && n % 2 === 0;
+            return (
+              <circle
+                key={n}
+                className={animate ? "mol-bead" : undefined}
+                style={animate ? { ["--bead-delay" as string]: `${(ci * 9 + n) * 0.13}s` } : undefined}
+                cx={26 + n * 24}
+                cy={y + (n % 2 ? -4 : 4)}
+                r="3"
+                fill="#3a342c"
+                stroke="#6b6356"
+                strokeWidth="1"
+              />
+            );
+          })}
         </g>
       ))}
       {/* crosslinks between adjacent chains */}
@@ -41,7 +56,7 @@ export function CrosslinkDiagram({
         const top = chains[i % (chains.length - 1)];
         const bottom = chains[(i % (chains.length - 1)) + 1];
         return (
-          <line key={i} x1={x} y1={top + (i % 2 ? 4 : -4)} x2={x} y2={bottom + (i % 2 ? -4 : 4)} stroke="#ff8c2b" strokeWidth="2.6" strokeLinecap="round" />
+          <line key={i} className="crosslink-bond" style={{ ["--bond-delay" as string]: `${i * 0.22}s` }} x1={x} y1={top + (i % 2 ? 4 : -4)} x2={x} y2={bottom + (i % 2 ? -4 : 4)} stroke="#ff8c2b" strokeWidth="2.6" strokeLinecap="round" />
         );
       })}
       {label && (

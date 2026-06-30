@@ -76,6 +76,21 @@ canvas {
   touch-action: pan-y !important;
 }
 
+/* Global reduced-motion safety net: neutralize every continuous animation and
+   transition (including pre-existing Tailwind loaders/pulses) so reduced-motion
+   users get a calm, static UI. The per-class motion vocabulary is also gated, so
+   this is belt-and-suspenders. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Visible keyboard focus */
 *:focus-visible {
   outline: 2px solid #6d3bd4;
@@ -222,6 +237,122 @@ canvas {
   @keyframes sheen-slide {
     to {
       background-position: -280% 0;
+    }
+  }
+
+  /* ====================================================================
+     Controlled industrial motion: process energy made visible.
+     Everything below animates transform / opacity / shadow / background
+     only (no layout properties), so there is never a reflow, scroll jump,
+     or width change. All of it is disabled under reduced-motion.
+     ==================================================================== */
+  @media (prefers-reduced-motion: no-preference) {
+    /* material moving along a connector or progress track */
+    .flow-stream {
+      background-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--flow, rgba(184, 134, 11, 0.55)) 45%,
+        var(--flow, rgba(184, 134, 11, 0.55)) 55%,
+        transparent 100%
+      );
+      background-size: 220% 100%;
+      background-repeat: no-repeat;
+      animation: flow-stream 1.9s linear infinite;
+    }
+    @keyframes flow-stream {
+      from { background-position: 130% 0; }
+      to { background-position: -130% 0; }
+    }
+
+    /* amber cure / heat pulse (soft thermal glow, no size change) */
+    .pulse-cure {
+      animation: pulse-cure 2.1s ease-in-out infinite;
+    }
+    @keyframes pulse-cure {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(184, 134, 11, 0); }
+      50% { box-shadow: 0 0 13px 1px rgba(184, 134, 11, 0.34); }
+    }
+
+    /* cyan QA scan: a measurement sweep across a container (use on a relative,
+       overflow-hidden parent) */
+    .qa-scan { position: relative; }
+    .qa-scan::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(14, 143, 168, 0.14) 47%,
+        rgba(14, 143, 168, 0.26) 50%,
+        rgba(14, 143, 168, 0.14) 53%,
+        transparent 100%
+      );
+      background-size: 200% 100%;
+      background-repeat: no-repeat;
+      animation: qa-scan 3s ease-in-out infinite;
+    }
+    @keyframes qa-scan {
+      0% { background-position: 150% 0; }
+      100% { background-position: -50% 0; }
+    }
+
+    /* one-shot QA measurement sweep: fired by remounting (key change) when the
+       user selects an instrument, so it reads as a single measurement, not an
+       ambient loop over an interactive surface. */
+    .qa-scan-pulse { position: relative; }
+    .qa-scan-pulse::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(14, 143, 168, 0.1) 47%,
+        rgba(14, 143, 168, 0.2) 50%,
+        rgba(14, 143, 168, 0.1) 53%,
+        transparent 100%
+      );
+      background-size: 200% 100%;
+      background-repeat: no-repeat;
+      animation: qa-scan 0.9s ease-out 1;
+    }
+
+    /* digital-thread signal: a staggered node pulse so a "signal" travels the
+       chain. Set --thread-delay per node. */
+    .thread-pulse {
+      animation: thread-pulse 3s ease-in-out infinite;
+      animation-delay: var(--thread-delay, 0s);
+    }
+    @keyframes thread-pulse {
+      0%, 70%, 100% { opacity: 0.6; }
+      80% { opacity: 1; }
+    }
+
+    /* crosslink bond energy + gentle molecular drift (chemistry SVG). Set
+       --bond-delay / --bead-delay per element. */
+    .crosslink-bond {
+      animation: crosslink-bond 2.6s ease-in-out infinite;
+      animation-delay: var(--bond-delay, 0s);
+    }
+    @keyframes crosslink-bond {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
+    }
+    .mol-bead {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: mol-bead 3.4s ease-in-out infinite;
+      animation-delay: var(--bead-delay, 0s);
+    }
+    @keyframes mol-bead {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-1.4px); }
     }
   }
 }

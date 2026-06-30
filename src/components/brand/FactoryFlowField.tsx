@@ -53,7 +53,16 @@ export default function FactoryFlowField() {
     const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; }, { threshold: 0 });
     io.observe(parent);
 
-    const COUNT = Math.round(Math.min(reduce ? 650 : 2300, Math.max(800, (w * h) / 620)));
+    // Reduced motion: keep the hero fully static. No animation loop, no pointer
+    // listeners, no drift; the canvas stays clean and the headline/visual carry it.
+    if (reduce) {
+      return () => {
+        ro.disconnect();
+        io.disconnect();
+      };
+    }
+
+    const COUNT = Math.round(Math.min(2300, Math.max(800, (w * h) / 620)));
     const ps: P[] = [];
     const make = (x?: number, y?: number): P => {
       const xx = x ?? Math.random() * w, yy = y ?? Math.random() * h;
